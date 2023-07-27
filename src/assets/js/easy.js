@@ -56,7 +56,7 @@ getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem('quizScore', score);
     //go to the end page
-    return window.location.assign('index.html');
+    return window.location.assign('score.html');
   }
   questionCounter++;
   progressText.innerText = `Soal ${questionCounter}/${MAX_QUESTIONS}`;

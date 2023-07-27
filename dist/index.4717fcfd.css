@@ -14352,6 +14352,13 @@ textarea.form-control-lg {
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 5px;
+}
 body {
   background: url("background.3392bf41.jpg");
   font-family: "Poppins", sans-serif;
