@@ -1,0 +1,21 @@
+{
+  "name": "belajar-bahasa-arab",
+  "version": "1.0.0",
+  "description": "",
+  "source": "./src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.1.3"
+  }
+}
