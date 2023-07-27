@@ -523,10 +523,16 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _apexcharts = require("apexcharts");
 var _apexchartsDefault = parcelHelpers.interopDefault(_apexcharts);
 const quizScoreText = document.getElementById('quiz-score-text');
-const MAX_SCORE = 30;
+const matchScoreText = document.getElementById('match-score-text');
+const MAX_SCORE_QUIZ = 30;
 const QUIZ_SCORE = window.localStorage.getItem('quizScore') ?? 0;
-const QUIZ_SCORE_2 = MAX_SCORE - Number(QUIZ_SCORE);
-quizScoreText.innerText = `Skor: ${QUIZ_SCORE}/${MAX_SCORE}`;
+const QUIZ_SCORE_2 = MAX_SCORE_QUIZ - Number(QUIZ_SCORE);
+const MAX_SCORE_MATCH = 100;
+const MATCH_SCORE = window.localStorage.getItem('matchScore') ?? 0;
+const MATCH_SCORE_2 = MAX_SCORE_MATCH - Number(MATCH_SCORE);
+console.log(MATCH_SCORE);
+quizScoreText.innerText = `Skor: ${QUIZ_SCORE}/${MAX_SCORE_QUIZ}`;
+matchScoreText.innerText = `Skor: ${MATCH_SCORE}/${MAX_SCORE_MATCH}`;
 let chartOptions = {
     color: '#adb5bd',
     labels: [
@@ -576,8 +582,8 @@ let quizChartOptions = {
 let matchChartOptions = {
     ...chartOptions,
     series: [
-        40,
-        60
+        Number(MATCH_SCORE),
+        Number(MATCH_SCORE_2)
     ]
 };
 let memoryChartOptions = {
