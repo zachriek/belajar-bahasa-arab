@@ -33,6 +33,9 @@
 // Bootstrap main import
 @import "~bootstrap/scss/bootstrap";
 
+// Bootstrap Icon
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 // AOS
 @import '../../../node_modules/aos/dist/aos.css';
 
@@ -48,6 +51,32 @@
 body {
   background: url("../images/background.jpg");
   font-family: 'Poppins', sans-serif;
+}
+
+.section {
+  margin-top: 100px;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+.card-link {
+  color: inherit;
+  text-decoration: none
+}
+
+.card {
+  transition: all .3s ease-in-out;
+}
+
+.card-link:hover .card {
+  transform: scale(0.95);
 }
 
 section#hero {
