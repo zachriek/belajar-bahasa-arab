@@ -522,6 +522,8 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // import Bootstrap
 var _bootstrap = require("bootstrap");
+// import SweetAlert2
+var _sweetalert2Scss = require("sweetalert2/src/sweetalert2.scss");
 // import AOS
 var _aos = require("aos");
 var _aosDefault = parcelHelpers.interopDefault(_aos);
@@ -529,7 +531,7 @@ _aosDefault.default.init({
     duration: 1000
 });
 
-},{"bootstrap":"h36JB","aos":"eRzTM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"h36JB":[function(require,module,exports) {
+},{"bootstrap":"h36JB","aos":"eRzTM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","sweetalert2/src/sweetalert2.scss":"1MAAF"}],"h36JB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Alert", ()=>Alert
@@ -6803,6 +6805,6 @@ var createPopper = /*#__PURE__*/ _createPopperJs.popperGenerator({
     ]);
 });
 
-},{}]},["c22x7","aitAD"], "aitAD", "parcelRequire7dae")
+},{}],"1MAAF":[function() {},{}]},["c22x7","aitAD"], "aitAD", "parcelRequire7dae")
 
 //# sourceMappingURL=level.e5ac7667.js.map
