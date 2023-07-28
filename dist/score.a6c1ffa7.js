@@ -524,13 +524,12 @@ var _apexcharts = require("apexcharts");
 var _apexchartsDefault = parcelHelpers.interopDefault(_apexcharts);
 const quizScoreText = document.getElementById('quiz-score-text');
 const matchScoreText = document.getElementById('match-score-text');
-const MAX_SCORE_QUIZ = 30;
+const MAX_SCORE_QUIZ = 100;
 const QUIZ_SCORE = window.localStorage.getItem('quizScore') ?? 0;
 const QUIZ_SCORE_2 = MAX_SCORE_QUIZ - Number(QUIZ_SCORE);
 const MAX_SCORE_MATCH = 100;
 const MATCH_SCORE = window.localStorage.getItem('matchScore') ?? 0;
 const MATCH_SCORE_2 = MAX_SCORE_MATCH - Number(MATCH_SCORE);
-console.log(MATCH_SCORE);
 quizScoreText.innerText = `Skor: ${QUIZ_SCORE}/${MAX_SCORE_QUIZ}`;
 matchScoreText.innerText = `Skor: ${MATCH_SCORE}/${MAX_SCORE_MATCH}`;
 let chartOptions = {

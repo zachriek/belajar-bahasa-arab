@@ -524,8 +524,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _sweetalert2Js = require("sweetalert2/dist/sweetalert2.js");
 var _sweetalert2JsDefault = parcelHelpers.interopDefault(_sweetalert2Js);
 const question = document.getElementById('question');
-const choices = Array.from(document.getElementsByClassName('choice-text'));
-const answerCards = Array.from(document.getElementsByClassName('answer-card'));
+const choices = Array.from(document.getElementsByClassName('answer-card'));
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
@@ -537,27 +536,83 @@ let questionCounter = 0;
 let availableQuesions = [];
 let questions = [
     {
-        question: 'Inside which HTML element do we put the JavaScript??',
-        choice1: '<script>',
-        choice2: '<javascript>',
-        choice3: '<js>',
-        choice4: '<scripting>',
-        answer: 1
+        question: 'hamzah.png',
+        choice1: 'alif_t.png',
+        choice2: 'hamzah_t.png',
+        choice3: 'lam_t.png',
+        choice4: 'tho_t.png',
+        answer: 2
     },
     {
-        question: "What is the correct syntax for referring to an external script called 'xxx.js'?",
-        choice1: "<script href='xxx.js'>",
-        choice2: "<script name='xxx.js'>",
-        choice3: "<script src='xxx.js'>",
-        choice4: "<script file='xxx.js'>",
+        question: 'qof.png',
+        choice1: 'kaf_t.png',
+        choice2: 'wawu_t.png',
+        choice3: 'qof_t.png',
+        choice4: 'za_t.png',
         answer: 3
     },
     {
-        question: " How do you write 'Hello World' in an alert box?",
-        choice1: "msgBox('Hello World');",
-        choice2: "alertBox('Hello World');",
-        choice3: "msg('Hello World');",
-        choice4: "alert('Hello World');",
+        question: 'syin.png',
+        choice1: 'sin_t.png',
+        choice2: 'yak_t.png',
+        choice3: 'shod_t.png',
+        choice4: 'syin_t.png',
+        answer: 4
+    },
+    {
+        question: 'ha.png',
+        choice1: 'ha_t.png',
+        choice2: 'kho_t.png',
+        choice3: 'hha_t.png',
+        choice4: 'tho_t.png',
+        answer: 1
+    },
+    {
+        question: 'ain.png',
+        choice1: 'alif_t.png',
+        choice2: 'ain_t.png',
+        choice3: 'hamzah_t.png',
+        choice4: 'ta_t.png',
+        answer: 2
+    },
+    {
+        question: 'jim.png',
+        choice1: 'dal_t.png',
+        choice2: 'dzal_t.png',
+        choice3: 'dzo_t.png',
+        choice4: 'jim_t.png',
+        answer: 4
+    },
+    {
+        question: 'ba.png',
+        choice1: 'ta_t.png',
+        choice2: 'tsa_t.png',
+        choice3: 'ba_t.png',
+        choice4: 'yak_t.png',
+        answer: 3
+    },
+    {
+        question: 'dlod.png',
+        choice1: 'dal_t.png',
+        choice2: 'shod_t.png',
+        choice3: 'syin_t.png',
+        choice4: 'dlod_t.png',
+        answer: 4
+    },
+    {
+        question: 'mim.png',
+        choice1: 'nun_t.png',
+        choice2: 'mim_t.png',
+        choice3: 'lam_t.png',
+        choice4: 'ha_t.png',
+        answer: 2
+    },
+    {
+        question: 'ro.png',
+        choice1: 'alif_t.png',
+        choice2: 'wawu_t.png',
+        choice3: 'lam_t.png',
+        choice4: 'ro_t.png',
         answer: 4
     }, 
 ];
@@ -585,22 +640,23 @@ getNewQuestion = ()=>{
     progressBarFull.style.width = `${questionCounter / MAX_QUESTIONS * 100}%`;
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
-    question.innerText = currentQuestion.question;
+    console.log(question.src);
+    question.src = currentQuestion.question;
     choices.forEach((choice)=>{
         const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number];
+        choice.src = currentQuestion['choice' + number];
     });
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
-answerCards.forEach((choice)=>{
+choices.forEach((choice)=>{
     choice.addEventListener('click', (e)=>{
         if (!acceptingAnswers) return;
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
-        const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-        if (classToApply === 'correct') {
+        const isCorrect = selectedAnswer == currentQuestion.answer;
+        if (isCorrect) {
             incrementScore(CORRECT_BONUS);
             _sweetalert2JsDefault.default.fire({
                 title: 'Benar!',
@@ -612,8 +668,6 @@ answerCards.forEach((choice)=>{
             text: 'Jawaban kamu kurang tepat!',
             icon: 'error'
         });
-        selectedChoice.parentElement.classList.add(classToApply);
-        selectedChoice.parentElement.classList.remove(classToApply);
         if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) setTimeout(()=>{
             _sweetalert2JsDefault.default.fire({
                 title: 'Selesai!',
