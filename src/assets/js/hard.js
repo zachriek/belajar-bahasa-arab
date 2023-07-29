@@ -62,6 +62,9 @@ const handleClickHijaiyah = () => {
                 title: 'Benar!',
                 text: 'Jawaban kamu benar!',
                 icon: 'success',
+                imageUrl: 'true.gif',
+                imageWidth: 150,
+                imageAlt: 'Custom image',
               });
             }, 200);
           } else {
@@ -70,6 +73,9 @@ const handleClickHijaiyah = () => {
                 title: 'Kurang Tepat!',
                 text: 'Jawaban kamu kurang tepat!',
                 icon: 'error',
+                imageUrl: 'false.gif',
+                imageWidth: 150,
+                imageAlt: 'Custom image',
               });
             }, 200);
           }
@@ -112,6 +118,9 @@ const gameOver = () => {
       icon: 'success',
       timer: 5000,
       timerProgressBar: true,
+      imageUrl: 'true.gif',
+      imageWidth: 150,
+      imageAlt: 'Custom image',
     }).then(() => {
       localStorage.setItem('memoryScore', score);
       return window.location.assign('score.html');

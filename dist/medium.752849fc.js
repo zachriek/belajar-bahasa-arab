@@ -600,7 +600,10 @@ const gameOver = ()=>{
             text: 'Permainan sudah selesai!',
             icon: 'success',
             timer: 5000,
-            timerProgressBar: true
+            timerProgressBar: true,
+            imageUrl: 'true.gif',
+            imageWidth: 150,
+            imageAlt: 'Custom image'
         }).then(()=>{
             localStorage.setItem('matchScore', score);
             return window.location.assign('score.html');
@@ -628,13 +631,19 @@ const handleClickImage = ()=>{
                     _sweetalert2JsDefault.default.fire({
                         title: 'Benar!',
                         text: 'Jawaban kamu benar!',
-                        icon: 'success'
+                        icon: 'success',
+                        imageUrl: 'true.gif',
+                        imageWidth: 150,
+                        imageAlt: 'Custom image'
                     });
                     incrementScore(CORRECT_BONUS);
                 } else _sweetalert2JsDefault.default.fire({
                     title: 'Kurang Tepat!',
                     text: 'Jawaban kamu kurang tepat!',
-                    icon: 'error'
+                    icon: 'error',
+                    imageUrl: 'false.gif',
+                    imageWidth: 150,
+                    imageAlt: 'Custom image'
                 });
                 const elArab = document.querySelector(`.hijaiyah-img[data-hijaiyah="${selectedHijaiyahArab}"]`);
                 const elLatin = e.target;

@@ -594,14 +594,20 @@ const handleClickHijaiyah = ()=>{
                         _sweetalert2JsDefault.default.fire({
                             title: 'Benar!',
                             text: 'Jawaban kamu benar!',
-                            icon: 'success'
+                            icon: 'success',
+                            imageUrl: 'true.gif',
+                            imageWidth: 150,
+                            imageAlt: 'Custom image'
                         });
                     }, 200);
                 } else setTimeout(()=>{
                     _sweetalert2JsDefault.default.fire({
                         title: 'Kurang Tepat!',
                         text: 'Jawaban kamu kurang tepat!',
-                        icon: 'error'
+                        icon: 'error',
+                        imageUrl: 'false.gif',
+                        imageWidth: 150,
+                        imageAlt: 'Custom image'
                     });
                 }, 200);
                 selected1 = undefined;
@@ -634,7 +640,10 @@ const gameOver = ()=>{
             text: 'Permainan sudah selesai!',
             icon: 'success',
             timer: 5000,
-            timerProgressBar: true
+            timerProgressBar: true,
+            imageUrl: 'true.gif',
+            imageWidth: 150,
+            imageAlt: 'Custom image'
         }).then(()=>{
             localStorage.setItem('memoryScore', score);
             return window.location.assign('score.html');

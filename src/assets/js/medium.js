@@ -82,6 +82,9 @@ const gameOver = () => {
       icon: 'success',
       timer: 5000,
       timerProgressBar: true,
+      imageUrl: 'true.gif',
+      imageWidth: 150,
+      imageAlt: 'Custom image',
     }).then(() => {
       localStorage.setItem('matchScore', score);
       return window.location.assign('score.html');
@@ -119,6 +122,9 @@ const handleClickImage = () => {
             title: 'Benar!',
             text: 'Jawaban kamu benar!',
             icon: 'success',
+            imageUrl: 'true.gif',
+            imageWidth: 150,
+            imageAlt: 'Custom image',
           });
           incrementScore(CORRECT_BONUS);
         } else {
@@ -126,6 +132,9 @@ const handleClickImage = () => {
             title: 'Kurang Tepat!',
             text: 'Jawaban kamu kurang tepat!',
             icon: 'error',
+            imageUrl: 'false.gif',
+            imageWidth: 150,
+            imageAlt: 'Custom image',
           });
         }
 

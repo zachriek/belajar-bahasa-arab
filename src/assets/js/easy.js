@@ -147,12 +147,18 @@ choices.forEach((choice) => {
         title: 'Benar!',
         text: 'Jawaban kamu benar!',
         icon: 'success',
+        imageUrl: 'true.gif',
+        imageWidth: 150,
+        imageAlt: 'Custom image',
       });
     } else {
       Swal.fire({
         title: 'Kurang Tepat!',
         text: 'Jawaban kamu kurang tepat!',
         icon: 'error',
+        imageUrl: 'false.gif',
+        imageWidth: 150,
+        imageAlt: 'Custom image',
       });
     }
 
@@ -164,6 +170,9 @@ choices.forEach((choice) => {
           icon: 'success',
           timer: 5000,
           timerProgressBar: true,
+          imageUrl: 'true.gif',
+          imageWidth: 150,
+          imageAlt: 'Custom image',
         }).then(() => getNewQuestion());
       }, 1000);
     } else {

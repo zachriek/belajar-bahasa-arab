@@ -660,12 +660,18 @@ choices.forEach((choice)=>{
             _sweetalert2JsDefault.default.fire({
                 title: 'Benar!',
                 text: 'Jawaban kamu benar!',
-                icon: 'success'
+                icon: 'success',
+                imageUrl: 'true.gif',
+                imageWidth: 150,
+                imageAlt: 'Custom image'
             });
         } else _sweetalert2JsDefault.default.fire({
             title: 'Kurang Tepat!',
             text: 'Jawaban kamu kurang tepat!',
-            icon: 'error'
+            icon: 'error',
+            imageUrl: 'false.gif',
+            imageWidth: 150,
+            imageAlt: 'Custom image'
         });
         if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) setTimeout(()=>{
             _sweetalert2JsDefault.default.fire({
@@ -673,7 +679,10 @@ choices.forEach((choice)=>{
                 text: 'Permainan sudah selesai!',
                 icon: 'success',
                 timer: 5000,
-                timerProgressBar: true
+                timerProgressBar: true,
+                imageUrl: 'true.gif',
+                imageWidth: 150,
+                imageAlt: 'Custom image'
             }).then(()=>getNewQuestion()
             );
         }, 1000);
