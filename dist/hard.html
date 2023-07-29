@@ -14,17 +14,18 @@
     <title>Belajar Bahasa Arab</title>
   </head>
   <body>
-    <section class="mt-5" id="quiz">
+    <div id="overlay">
+      <h1 id="overlay-text"></h1>
+    </div>
+    <section class="mt-5" id="memory">
       <div class="container">
-        <div class="row mb-5 fixed-top pt-5">
-          <div class="col-12 d-flex flex-column justify-content-center align-items-center text-center">
-            <div>
-              <h5>Skor</h5>
-              <h2 id="score">0</h2>
-            </div>
-          </div>
+        <div class="text-center mt-5 mx-auto" style="width: max-content">
+          <h5>Skor</h5>
+          <h2 id="score">0</h2>
         </div>
-        <div class="row match-row"></div>
+        <div class="row justify-content-center my-5">
+          <div class="col-12 col-lg-10 col-xl-7 memory-row d-flex flex-wrap justify-content-center align-items-center gap-2"></div>
+        </div>
       </div>
     </section>
 

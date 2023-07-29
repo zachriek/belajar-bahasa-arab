@@ -99,7 +99,7 @@ let questions = [
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = questions.length;
 
-startGame = () => {
+const startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuesions = [...questions];
@@ -107,7 +107,7 @@ startGame = () => {
   showScore();
 };
 
-getNewQuestion = () => {
+const getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem('quizScore', score);
     //go to the end page
@@ -120,7 +120,6 @@ getNewQuestion = () => {
 
   const questionIndex = Math.floor(Math.random() * availableQuesions.length);
   currentQuestion = availableQuesions[questionIndex];
-  console.log(question.src);
   question.src = currentQuestion.question;
 
   choices.forEach((choice) => {
@@ -173,11 +172,11 @@ choices.forEach((choice) => {
   });
 });
 
-showScore = () => {
+const showScore = () => {
   scoreText.innerText = `${score}/${MAX_QUESTIONS * CORRECT_BONUS}`;
 };
 
-incrementScore = (num) => {
+const incrementScore = (num) => {
   score += num;
   showScore();
 };

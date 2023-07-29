@@ -55,7 +55,8 @@ const MAX_QUESTIONS = 10;
 const CORRECT_BONUS = 10;
 
 const appendHijaiyah = () => {
-  for (const hijaiyah of hijaiyahs) {
+  const shuffled = [...hijaiyahs].sort(() => Math.random() - 0.5);
+  for (const hijaiyah of shuffled) {
     matchRow.innerHTML += `
     <div class="col-12 d-flex justify-content-between mb-5">
       <div class="card bg-secondary">
@@ -148,11 +149,11 @@ const handleClickImage = () => {
   });
 };
 
-showScore = () => {
+const showScore = () => {
   scoreText.innerText = `${score}/${MAX_QUESTIONS * CORRECT_BONUS}`;
 };
 
-incrementScore = (num) => {
+const incrementScore = (num) => {
   score += num;
   showScore();
 };

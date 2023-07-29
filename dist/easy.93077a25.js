@@ -619,7 +619,7 @@ let questions = [
 //CONSTANTS
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = questions.length;
-startGame = ()=>{
+const startGame = ()=>{
     questionCounter = 0;
     score = 0;
     availableQuesions = [
@@ -628,7 +628,7 @@ startGame = ()=>{
     getNewQuestion();
     showScore();
 };
-getNewQuestion = ()=>{
+const getNewQuestion = ()=>{
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('quizScore', score);
         //go to the end page
@@ -640,7 +640,6 @@ getNewQuestion = ()=>{
     progressBarFull.style.width = `${questionCounter / MAX_QUESTIONS * 100}%`;
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
-    console.log(question.src);
     question.src = currentQuestion.question;
     choices.forEach((choice)=>{
         const number = choice.dataset['number'];
@@ -681,10 +680,10 @@ choices.forEach((choice)=>{
         else getNewQuestion();
     });
 });
-showScore = ()=>{
+const showScore = ()=>{
     scoreText.innerText = `${score}/${MAX_QUESTIONS * CORRECT_BONUS}`;
 };
-incrementScore = (num)=>{
+const incrementScore = (num)=>{
     score += num;
     showScore();
 };
