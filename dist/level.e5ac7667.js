@@ -528,7 +528,8 @@ var _sweetalert2Scss = require("sweetalert2/src/sweetalert2.scss");
 var _aos = require("aos");
 var _aosDefault = parcelHelpers.interopDefault(_aos);
 _aosDefault.default.init({
-    duration: 1000
+    duration: 1000,
+    once: true
 });
 
 },{"bootstrap":"h36JB","aos":"eRzTM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","sweetalert2/src/sweetalert2.scss":"1MAAF"}],"h36JB":[function(require,module,exports) {
