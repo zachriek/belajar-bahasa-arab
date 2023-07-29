@@ -3,6 +3,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 const matchRow = document.querySelector('.match-row');
 const scoreText = document.getElementById('score');
+const xIcon = document.getElementById('x-icon');
 
 const hijaiyahs = [
   {
@@ -174,3 +175,21 @@ const startGame = () => {
 };
 
 startGame();
+
+xIcon.addEventListener('click', () => {
+  Swal.fire({
+    title: 'Keluar?',
+    text: 'Kamu yakin ingin keluar dari permainan?',
+    reverseButtons: true,
+    showCancelButton: true,
+    cancelButtonText: 'Batal',
+    confirmButtonText: 'Keluar',
+    imageUrl: 'petunjuk.gif',
+    imageWidth: 150,
+    imageAlt: 'Custom image',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      return window.location.assign('level.html');
+    }
+  });
+});

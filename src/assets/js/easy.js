@@ -6,6 +6,8 @@ const choices = Array.from(document.getElementsByClassName('answer-card'));
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
+const xIcon = document.getElementById('x-icon');
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -191,3 +193,21 @@ const incrementScore = (num) => {
 };
 
 startGame();
+
+xIcon.addEventListener('click', () => {
+  Swal.fire({
+    title: 'Keluar?',
+    text: 'Kamu yakin ingin keluar dari permainan?',
+    reverseButtons: true,
+    showCancelButton: true,
+    cancelButtonText: 'Batal',
+    confirmButtonText: 'Keluar',
+    imageUrl: 'petunjuk.gif',
+    imageWidth: 150,
+    imageAlt: 'Custom image',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      return window.location.assign('level.html');
+    }
+  });
+});

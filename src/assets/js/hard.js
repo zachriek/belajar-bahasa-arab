@@ -5,6 +5,7 @@ const memoryRow = document.querySelector('.memory-row');
 const scoreText = document.getElementById('score');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
+const xIcon = document.getElementById('x-icon');
 
 let score = 0;
 let count = 10;
@@ -136,3 +137,21 @@ const startGame = () => {
 };
 
 startGame();
+
+xIcon.addEventListener('click', () => {
+  Swal.fire({
+    title: 'Keluar?',
+    text: 'Kamu yakin ingin keluar dari permainan?',
+    reverseButtons: true,
+    showCancelButton: true,
+    cancelButtonText: 'Batal',
+    confirmButtonText: 'Keluar',
+    imageUrl: 'petunjuk.gif',
+    imageWidth: 150,
+    imageAlt: 'Custom image',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      return window.location.assign('level.html');
+    }
+  });
+});

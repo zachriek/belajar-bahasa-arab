@@ -527,6 +527,7 @@ const memoryRow = document.querySelector('.memory-row');
 const scoreText = document.getElementById('score');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
+const xIcon = document.getElementById('x-icon');
 let score = 0;
 let count = 10;
 let clicked = 0;
@@ -657,6 +658,21 @@ const startGame = ()=>{
     handleClickHijaiyah();
 };
 startGame();
+xIcon.addEventListener('click', ()=>{
+    _sweetalert2JsDefault.default.fire({
+        title: 'Keluar?',
+        text: 'Kamu yakin ingin keluar dari permainan?',
+        reverseButtons: true,
+        showCancelButton: true,
+        cancelButtonText: 'Batal',
+        confirmButtonText: 'Keluar',
+        imageUrl: 'petunjuk.gif',
+        imageWidth: 150,
+        imageAlt: 'Custom image'
+    }).then((result)=>{
+        if (result.isConfirmed) return window.location.assign('level.html');
+    });
+});
 
 },{"sweetalert2/dist/sweetalert2.js":"9Oi7N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9Oi7N":[function(require,module,exports) {
 /*!

@@ -14363,6 +14363,9 @@ body {
   background: url("background.3392bf41.jpg");
   font-family: "Poppins", sans-serif;
 }
+ul {
+  list-style: none;
+}
 .section {
   margin-top: 100px;
 }
@@ -14372,6 +14375,9 @@ body {
 }
 .nav-link.active {
   font-weight: 600;
+}
+.list-group-item {
+  border: none;
 }
 .card-link {
   color: inherit;

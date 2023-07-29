@@ -528,6 +528,7 @@ const choices = Array.from(document.getElementsByClassName('answer-card'));
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
+const xIcon = document.getElementById('x-icon');
 let currentQuestion = {
 };
 let acceptingAnswers = false;
@@ -697,6 +698,21 @@ const incrementScore = (num)=>{
     showScore();
 };
 startGame();
+xIcon.addEventListener('click', ()=>{
+    _sweetalert2JsDefault.default.fire({
+        title: 'Keluar?',
+        text: 'Kamu yakin ingin keluar dari permainan?',
+        reverseButtons: true,
+        showCancelButton: true,
+        cancelButtonText: 'Batal',
+        confirmButtonText: 'Keluar',
+        imageUrl: 'petunjuk.gif',
+        imageWidth: 150,
+        imageAlt: 'Custom image'
+    }).then((result)=>{
+        if (result.isConfirmed) return window.location.assign('level.html');
+    });
+});
 
 },{"sweetalert2/dist/sweetalert2.js":"9Oi7N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9Oi7N":[function(require,module,exports) {
 /*!
