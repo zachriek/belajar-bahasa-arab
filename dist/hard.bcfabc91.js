@@ -528,7 +528,7 @@ const scoreText = document.getElementById('score');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
 let score = 0;
-let count = 3;
+let count = 10;
 let clicked = 0;
 let selected1;
 let selected2;
@@ -575,7 +575,7 @@ const appendHijaiyah = ()=>{
         }, 200);
         setTimeout(()=>{
             hImg.classList.add('flipped');
-        }, 4200);
+        }, 11200);
     });
 };
 const handleClickHijaiyah = ()=>{
