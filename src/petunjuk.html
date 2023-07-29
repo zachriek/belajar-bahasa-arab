@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+
+    <!-- CSS Main File -->
+    <link rel="stylesheet" href="./assets/scss/main.scss" />
+
+    <title>Belajar Bahasa Arab</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent fixed-top" data-aos="fade-down">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/quran.png" alt="quran" width="50" />
+          Belajar Bahasa Arab
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./level.html">Permainan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./petunjuk.html">Petunjuk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./score.html">Skor</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section" id="level">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-4">
+            <h2 class="heading" data-aos="fade-down">Petunjuk</h2>
+            <p class="text" data-aos="fade-down" data-aos-delay="300">Pilih petunjuk sesuai dengan tingkat kesulitan di bawah ini!</p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="600">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#easyModal">
+              <div class="card bg-secondary text-center">
+                <div class="card-body">
+                  <i class="bi bi-info-circle-fill" style="font-size: 2rem"></i>
+                  <h5 class="card-title">Mudah</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="900">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#mediumModal">
+              <div class="card bg-secondary text-center">
+                <div class="card-body">
+                  <i class="bi bi-info-circle-fill" style="font-size: 2rem"></i>
+                  <h5 class="card-title">Menengah</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="1200">
+            <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#hardModal">
+              <div class="card bg-secondary text-center">
+                <div class="card-body">
+                  <i class="bi bi-info-circle-fill" style="font-size: 2rem"></i>
+                  <h5 class="card-title">Sulit</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Easy Modal -->
+    <div class="modal fade" id="easyModal" tabindex="-1" aria-labelledby="easyModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5 class="modal-title text-center" id="easyModalLabel" style="font-weight: 600">Petunjuk</h5>
+            <p class="text-center">Permainan Tingkat Mudah</p>
+            <ul class="list-group">
+              <li class="list-group-item">1. Pilih salah satu jawaban dari 4 jawaban yang tersedia</li>
+              <li class="list-group-item">2. Jika jawaban yang dipilih benar maka akan muncul pesan "Jawaban Kamu Benar"</li>
+              <li class="list-group-item">3. Jika jawaban yang dipilih salah maka akan muncul pesan "Jawaban Kamu Kurang Tepat"</li>
+              <li class="list-group-item">4. Jika soal sudah habis, maka akan muncul pesan "Permainan Selesai"</li>
+              <li class="list-group-item">5. Kemudian, kamu akan diarahkan ke halaman skor untuk melihat hasil skor kamu</li>
+              <li class="list-group-item">6. Selamat Bermain! 😄</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Medium Modal -->
+    <div class="modal fade" id="mediumModal" tabindex="-1" aria-labelledby="mediumModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5 class="modal-title text-center" id="mediumModalLabel" style="font-weight: 600">Petunjuk</h5>
+            <p class="text-center">Permainan Tingkat Menengah</p>
+            <ul class="list-group">
+              <li class="list-group-item">1. Pilih gambar huruf hijaiyah di sebelah kiri</li>
+              <li class="list-group-item">2. Kemudian pilih gambar bacaan latin huruf hijaiyah di sebelah kanan</li>
+              <li class="list-group-item">3. Jika kedua gambar cocok maka akan muncul pesan "Jawaban Kamu Benar"</li>
+              <li class="list-group-item">4. Jika kedua gambar tidak cocok maka akan muncul pesan "Jawaban Kamu Kurang Tepat"</li>
+              <li class="list-group-item">5. Jika gambar huruf hijaiyah dan gambar bacaan latin huruf hijaiyah sudah habis, maka akan muncul pesan "Permainan Selesai"</li>
+              <li class="list-group-item">6. Kemudian, kamu akan diarahkan ke halaman skor untuk melihat hasil skor kamu</li>
+              <li class="list-group-item">7. Selamat Bermain! 😄</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hard Modal -->
+    <div class="modal fade" id="hardModal" tabindex="-1" aria-labelledby="hardModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5 class="modal-title text-center" id="hardModalLabel" style="font-weight: 600">Petunjuk</h5>
+            <p class="text-center">Permainan Tingkat Sulit</p>
+            <ul class="list-group">
+              <li class="list-group-item">1. Permainan akan dimulai dalam hitungan 10 detik, ketika waktu sudah mulai maka gambar huruf hijaiyah akan tertutup</li>
+              <li class="list-group-item">2. Pilih gambar huruf hijaiyah yang masih tertutup untuk membuka gambar pertama</li>
+              <li class="list-group-item">3. Kemudian pilih huruf hijaiyah yang masih tertutup untuk mencocokkan dengan gambar yang pertama</li>
+              <li class="list-group-item">4. Jika kedua gambar cocok maka akan muncul pesan "Jawaban Kamu Benar"</li>
+              <li class="list-group-item">5. Jika kedua gambar tidak cocok maka akan muncul pesan "Jawaban Kamu Kurang Tepat"</li>
+              <li class="list-group-item">6. Jika semua gambar huruf hijaiyah sudah terbuka, maka akan muncul pesan "Permainan Selesai"</li>
+              <li class="list-group-item">7. Kemudian, kamu akan diarahkan ke halaman skor untuk melihat hasil skor kamu</li>
+              <li class="list-group-item">8. Selamat Bermain! 😄</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Mainfile -->
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>
