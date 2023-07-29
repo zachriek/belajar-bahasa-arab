@@ -32,12 +32,37 @@
     <div class="fixed-bottom" style="bottom: 90px; left: 100px; z-index: 3">
       <h5>Petunjuk</h5>
     </div>
-    <div class="fixed-bottom" data-bs-toggle="tooltip" title="Petunjuk" style="bottom: 25px; left: 25px; cursor: pointer; z-index: 2">
+    <div class="fixed-bottom" title="Petunjuk" style="bottom: 25px; left: 25px; cursor: pointer; z-index: 2" data-bs-toggle="modal" data-bs-target="#exampleModal">
       <img src="./assets/images/petunjuk.gif" alt="petunjuk" width="120" style="border-radius: 50%" />
     </div>
 
     <div id="x-icon" style="position: fixed; bottom: 25px; right: 25px; cursor: pointer; z-index: 2">
       <i class="bi bi-x-circle-fill" style="font-size: 3rem"></i>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: 600">Petunjuk</h5>
+            <p class="text-center">Permainan Tingkat Sulit</p>
+            <ul class="list-group">
+              <li class="list-group-item">1. Permainan akan dimulai dalam hitungan 10 detik, ketika waktu sudah mulai maka gambar huruf hijaiyah akan tertutup</li>
+              <li class="list-group-item">2. Pilih gambar huruf hijaiyah yang masih tertutup untuk membuka gambar pertama</li>
+              <li class="list-group-item">3. Kemudian pilih huruf hijaiyah yang masih tertutup untuk mencocokkan dengan gambar yang pertama</li>
+              <li class="list-group-item">4. Jika kedua gambar cocok maka akan muncul pesan "Jawaban Kamu Benar"</li>
+              <li class="list-group-item">5. Jika kedua gambar tidak cocok maka akan muncul pesan "Jawaban Kamu Kurang Tepat"</li>
+              <li class="list-group-item">6. Jika semua gambar huruf hijaiyah sudah terbuka, maka akan muncul pesan "Permainan Selesai"</li>
+              <li class="list-group-item">7. Kemudian, kamu akan diarahkan ke halaman skor untuk melihat hasil skor kamu</li>
+              <li class="list-group-item">8. Selamat Bermain! 😄</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- JS Mainfile -->
