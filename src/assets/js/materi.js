@@ -28,6 +28,7 @@ const hijaiyahs = [
   'Nun',
   'Wawu',
   'Hha',
+  'Lam_Alif',
   'Hamzah',
   'Yak',
 ];
