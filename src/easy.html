@@ -47,7 +47,13 @@
     <div style="position: fixed; width: max-content; height: max-content; bottom: 90px; left: 100px; z-index: 3">
       <h5>Petunjuk</h5>
     </div>
-    <div title="Petunjuk" style="position: fixed; width: max-content; height: max-content; bottom: 25px; left: 25px; cursor: pointer; z-index: 2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <div
+      id="petunjuk"
+      title="Petunjuk"
+      style="position: fixed; width: max-content; height: max-content; bottom: 25px; left: 25px; cursor: pointer; z-index: 2"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
       <img src="./assets/images/petunjuk.gif" alt="petunjuk" width="120" style="border-radius: 50%" />
     </div>
 
@@ -77,6 +83,26 @@
         </div>
       </div>
     </div>
+
+    <audio autoplay loop id="music">
+      <source src="./assets/audio/music1.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="click-sound">
+      <source src="./assets/audio/click.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="success-sound">
+      <source src="./assets/audio/success.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="fail-sound">
+      <source src="./assets/audio/fail.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="done-sound">
+      <source src="./assets/audio/done.mp3" type="audio/mp3" />
+    </audio>
 
     <!-- JS Mainfile -->
     <script type="module" src="./assets/js/main.js"></script>

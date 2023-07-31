@@ -163,7 +163,29 @@
       </div>
     </div>
 
+    <audio autoplay="" loop="" id="music">
+      <source src="/music2.53c0d302.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="click-sound">
+      <source src="/click.29450c1e.mp3" type="audio/mp3">
+    </audio>
+
     <!-- JS Mainfile -->
     <script src="/level.e5ac7667.js" defer=""></script>
+    <script>const cardLinks = document.querySelectorAll('.card-link');
+const clickSound = document.getElementById('click-sound');
+cardLinks.forEach((card)=>{
+    card.addEventListener('mousemove', ()=>{
+        clickSound.currentTime = 0;
+        clickSound.play();
+    });
+    card.addEventListener('mouseout', ()=>{
+        clickSound.currentTime = 0;
+        clickSound.pause();
+    });
+});
+
+</script>
   </body>
 </html>

@@ -6,6 +6,12 @@ const scoreText = document.getElementById('score');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
 const xIcon = document.getElementById('x-icon');
+const petunjuk = document.getElementById('petunjuk');
+
+const clickSound = document.getElementById('click-sound');
+const successSound = document.getElementById('success-sound');
+const failSound = document.getElementById('fail-sound');
+const doneSound = document.getElementById('done-sound');
 
 let score = 0;
 let count = 10;
@@ -47,6 +53,7 @@ const handleClickHijaiyah = () => {
   hijaiyahImages.forEach((hImg) => {
     if (hImg.classList.contains('flipped')) {
       hImg.addEventListener('click', (e) => {
+        clickSound.play();
         e.target.classList.remove('flipped');
         if (!selected1) {
           selected1 = e.target.dataset['hijaiyah'];
@@ -59,6 +66,7 @@ const handleClickHijaiyah = () => {
           if (selected1 === selected2) {
             incrementScore(CORRECT_BONUS);
             setTimeout(() => {
+              successSound.play();
               Swal.fire({
                 title: 'Benar!',
                 text: 'Jawaban kamu benar!',
@@ -70,6 +78,7 @@ const handleClickHijaiyah = () => {
             }, 200);
           } else {
             setTimeout(() => {
+              failSound.play();
               Swal.fire({
                 title: 'Kurang Tepat!',
                 text: 'Jawaban kamu kurang tepat!',
@@ -113,6 +122,7 @@ const incrementScore = (num) => {
 
 const gameOver = () => {
   setTimeout(() => {
+    doneSound.play();
     Swal.fire({
       title: 'Selesai!',
       text: 'Permainan sudah selesai!',
@@ -139,6 +149,7 @@ const startGame = () => {
 startGame();
 
 xIcon.addEventListener('click', () => {
+  clickSound.play();
   Swal.fire({
     title: 'Keluar?',
     text: 'Kamu yakin ingin keluar dari permainan?',
@@ -155,3 +166,5 @@ xIcon.addEventListener('click', () => {
     }
   });
 });
+
+petunjuk.addEventListener('click', () => clickSound.play());

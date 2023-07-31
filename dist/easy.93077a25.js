@@ -529,6 +529,11 @@ const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const xIcon = document.getElementById('x-icon');
+const petunjuk = document.getElementById('petunjuk');
+const clickSound = document.getElementById('click-sound');
+const successSound = document.getElementById('success-sound');
+const failSound = document.getElementById('fail-sound');
+const doneSound = document.getElementById('done-sound');
 let currentQuestion = {
 };
 let acceptingAnswers = false;
@@ -652,12 +657,14 @@ const getNewQuestion = ()=>{
 choices.forEach((choice)=>{
     choice.addEventListener('click', (e)=>{
         if (!acceptingAnswers) return;
+        clickSound.play();
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
         const isCorrect = selectedAnswer == currentQuestion.answer;
         if (isCorrect) {
             incrementScore(CORRECT_BONUS);
+            successSound.play();
             _sweetalert2JsDefault.default.fire({
                 title: 'Benar!',
                 text: 'Jawaban kamu benar!',
@@ -666,15 +673,19 @@ choices.forEach((choice)=>{
                 imageWidth: 150,
                 imageAlt: 'Custom image'
             });
-        } else _sweetalert2JsDefault.default.fire({
-            title: 'Kurang Tepat!',
-            text: 'Jawaban kamu kurang tepat!',
-            icon: 'error',
-            imageUrl: 'false.gif',
-            imageWidth: 150,
-            imageAlt: 'Custom image'
-        });
+        } else {
+            failSound.play();
+            _sweetalert2JsDefault.default.fire({
+                title: 'Kurang Tepat!',
+                text: 'Jawaban kamu kurang tepat!',
+                icon: 'error',
+                imageUrl: 'false.gif',
+                imageWidth: 150,
+                imageAlt: 'Custom image'
+            });
+        }
         if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) setTimeout(()=>{
+            doneSound.play();
             _sweetalert2JsDefault.default.fire({
                 title: 'Selesai!',
                 text: 'Permainan sudah selesai!',
@@ -699,6 +710,7 @@ const incrementScore = (num)=>{
 };
 startGame();
 xIcon.addEventListener('click', ()=>{
+    clickSound.play();
     _sweetalert2JsDefault.default.fire({
         title: 'Keluar?',
         text: 'Kamu yakin ingin keluar dari permainan?',
@@ -713,6 +725,8 @@ xIcon.addEventListener('click', ()=>{
         if (result.isConfirmed) return window.location.assign('level.html');
     });
 });
+petunjuk.addEventListener('click', ()=>clickSound.play()
+);
 
 },{"sweetalert2/dist/sweetalert2.js":"9Oi7N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9Oi7N":[function(require,module,exports) {
 /*!

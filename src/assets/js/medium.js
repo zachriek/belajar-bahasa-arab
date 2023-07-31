@@ -4,6 +4,12 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 const matchRow = document.querySelector('.match-row');
 const scoreText = document.getElementById('score');
 const xIcon = document.getElementById('x-icon');
+const petunjuk = document.getElementById('petunjuk');
+
+const clickSound = document.getElementById('click-sound');
+const successSound = document.getElementById('success-sound');
+const failSound = document.getElementById('fail-sound');
+const doneSound = document.getElementById('done-sound');
 
 const hijaiyahs = [
   {
@@ -77,6 +83,7 @@ const appendHijaiyah = () => {
 
 const gameOver = () => {
   setTimeout(() => {
+    doneSound.play();
     Swal.fire({
       title: 'Selesai!',
       text: 'Permainan sudah selesai!',
@@ -99,6 +106,8 @@ const handleClickImage = () => {
 
   hijaiyahImages.forEach((hImg) => {
     hImg.addEventListener('click', (e) => {
+      clickSound.play();
+
       selectedHijaiyahArab = e.target.dataset['hijaiyah'];
 
       hijaiyahImages.forEach((hImg2) => hImg2.classList.remove('hijaiyah-active'));
@@ -119,6 +128,8 @@ const handleClickImage = () => {
         selectedHijaiyahLatin = e.target.dataset['hijaiyah'];
 
         if (selectedHijaiyahArab === selectedHijaiyahLatin) {
+          incrementScore(CORRECT_BONUS);
+          successSound.play();
           Swal.fire({
             title: 'Benar!',
             text: 'Jawaban kamu benar!',
@@ -127,8 +138,8 @@ const handleClickImage = () => {
             imageWidth: 150,
             imageAlt: 'Custom image',
           });
-          incrementScore(CORRECT_BONUS);
         } else {
+          failSound.play();
           Swal.fire({
             title: 'Kurang Tepat!',
             text: 'Jawaban kamu kurang tepat!',
@@ -177,6 +188,7 @@ const startGame = () => {
 startGame();
 
 xIcon.addEventListener('click', () => {
+  clickSound.play();
   Swal.fire({
     title: 'Keluar?',
     text: 'Kamu yakin ingin keluar dari permainan?',
@@ -193,3 +205,5 @@ xIcon.addEventListener('click', () => {
     }
   });
 });
+
+petunjuk.addEventListener('click', () => clickSound.play());

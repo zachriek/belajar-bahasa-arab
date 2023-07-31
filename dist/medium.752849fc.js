@@ -526,6 +526,11 @@ var _sweetalert2JsDefault = parcelHelpers.interopDefault(_sweetalert2Js);
 const matchRow = document.querySelector('.match-row');
 const scoreText = document.getElementById('score');
 const xIcon = document.getElementById('x-icon');
+const petunjuk = document.getElementById('petunjuk');
+const clickSound = document.getElementById('click-sound');
+const successSound = document.getElementById('success-sound');
+const failSound = document.getElementById('fail-sound');
+const doneSound = document.getElementById('done-sound');
 const hijaiyahs = [
     {
         arab: 'alif',
@@ -596,6 +601,7 @@ const appendHijaiyah = ()=>{
 };
 const gameOver = ()=>{
     setTimeout(()=>{
+        doneSound.play();
         _sweetalert2JsDefault.default.fire({
             title: 'Selesai!',
             text: 'Permainan sudah selesai!',
@@ -616,6 +622,7 @@ const handleClickImage = ()=>{
     const hijaiyahLatinImages = document.querySelectorAll('.hijaiyah-latin-img');
     hijaiyahImages.forEach((hImg)=>{
         hImg.addEventListener('click', (e)=>{
+            clickSound.play();
             selectedHijaiyahArab = e.target.dataset['hijaiyah'];
             hijaiyahImages.forEach((hImg2)=>hImg2.classList.remove('hijaiyah-active')
             );
@@ -629,6 +636,8 @@ const handleClickImage = ()=>{
                 clicked++;
                 selectedHijaiyahLatin = e.target.dataset['hijaiyah'];
                 if (selectedHijaiyahArab === selectedHijaiyahLatin) {
+                    incrementScore(CORRECT_BONUS);
+                    successSound.play();
                     _sweetalert2JsDefault.default.fire({
                         title: 'Benar!',
                         text: 'Jawaban kamu benar!',
@@ -637,15 +646,17 @@ const handleClickImage = ()=>{
                         imageWidth: 150,
                         imageAlt: 'Custom image'
                     });
-                    incrementScore(CORRECT_BONUS);
-                } else _sweetalert2JsDefault.default.fire({
-                    title: 'Kurang Tepat!',
-                    text: 'Jawaban kamu kurang tepat!',
-                    icon: 'error',
-                    imageUrl: 'false.gif',
-                    imageWidth: 150,
-                    imageAlt: 'Custom image'
-                });
+                } else {
+                    failSound.play();
+                    _sweetalert2JsDefault.default.fire({
+                        title: 'Kurang Tepat!',
+                        text: 'Jawaban kamu kurang tepat!',
+                        icon: 'error',
+                        imageUrl: 'false.gif',
+                        imageWidth: 150,
+                        imageAlt: 'Custom image'
+                    });
+                }
                 const elArab = document.querySelector(`.hijaiyah-img[data-hijaiyah="${selectedHijaiyahArab}"]`);
                 const elLatin = e.target;
                 elArab.style.display = 'none';
@@ -675,6 +686,7 @@ const startGame = ()=>{
 };
 startGame();
 xIcon.addEventListener('click', ()=>{
+    clickSound.play();
     _sweetalert2JsDefault.default.fire({
         title: 'Keluar?',
         text: 'Kamu yakin ingin keluar dari permainan?',
@@ -689,6 +701,8 @@ xIcon.addEventListener('click', ()=>{
         if (result.isConfirmed) return window.location.assign('level.html');
     });
 });
+petunjuk.addEventListener('click', ()=>clickSound.play()
+);
 
 },{"sweetalert2/dist/sweetalert2.js":"9Oi7N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9Oi7N":[function(require,module,exports) {
 /*!

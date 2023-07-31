@@ -7,6 +7,12 @@ const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const xIcon = document.getElementById('x-icon');
+const petunjuk = document.getElementById('petunjuk');
+
+const clickSound = document.getElementById('click-sound');
+const successSound = document.getElementById('success-sound');
+const failSound = document.getElementById('fail-sound');
+const doneSound = document.getElementById('done-sound');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -137,6 +143,8 @@ choices.forEach((choice) => {
   choice.addEventListener('click', (e) => {
     if (!acceptingAnswers) return;
 
+    clickSound.play();
+
     acceptingAnswers = false;
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset['number'];
@@ -145,6 +153,7 @@ choices.forEach((choice) => {
 
     if (isCorrect) {
       incrementScore(CORRECT_BONUS);
+      successSound.play();
       Swal.fire({
         title: 'Benar!',
         text: 'Jawaban kamu benar!',
@@ -154,6 +163,7 @@ choices.forEach((choice) => {
         imageAlt: 'Custom image',
       });
     } else {
+      failSound.play();
       Swal.fire({
         title: 'Kurang Tepat!',
         text: 'Jawaban kamu kurang tepat!',
@@ -166,6 +176,7 @@ choices.forEach((choice) => {
 
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
       setTimeout(() => {
+        doneSound.play();
         Swal.fire({
           title: 'Selesai!',
           text: 'Permainan sudah selesai!',
@@ -195,6 +206,7 @@ const incrementScore = (num) => {
 startGame();
 
 xIcon.addEventListener('click', () => {
+  clickSound.play();
   Swal.fire({
     title: 'Keluar?',
     text: 'Kamu yakin ingin keluar dari permainan?',
@@ -211,3 +223,5 @@ xIcon.addEventListener('click', () => {
     }
   });
 });
+
+petunjuk.addEventListener('click', () => clickSound.play());

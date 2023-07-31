@@ -528,6 +528,11 @@ const scoreText = document.getElementById('score');
 const overlay = document.getElementById('overlay');
 const overlayText = document.getElementById('overlay-text');
 const xIcon = document.getElementById('x-icon');
+const petunjuk = document.getElementById('petunjuk');
+const clickSound = document.getElementById('click-sound');
+const successSound = document.getElementById('success-sound');
+const failSound = document.getElementById('fail-sound');
+const doneSound = document.getElementById('done-sound');
 let score = 0;
 let count = 10;
 let clicked = 0;
@@ -583,6 +588,7 @@ const handleClickHijaiyah = ()=>{
     const hijaiyahImages = document.querySelectorAll('.hijaiyah-memory-img');
     hijaiyahImages.forEach((hImg)=>{
         if (hImg.classList.contains('flipped')) hImg.addEventListener('click', (e)=>{
+            clickSound.play();
             e.target.classList.remove('flipped');
             if (!selected1) selected1 = e.target.dataset['hijaiyah'];
             else {
@@ -592,6 +598,7 @@ const handleClickHijaiyah = ()=>{
                 if (selected1 === selected2) {
                     incrementScore(CORRECT_BONUS);
                     setTimeout(()=>{
+                        successSound.play();
                         _sweetalert2JsDefault.default.fire({
                             title: 'Benar!',
                             text: 'Jawaban kamu benar!',
@@ -602,6 +609,7 @@ const handleClickHijaiyah = ()=>{
                         });
                     }, 200);
                 } else setTimeout(()=>{
+                    failSound.play();
                     _sweetalert2JsDefault.default.fire({
                         title: 'Kurang Tepat!',
                         text: 'Jawaban kamu kurang tepat!',
@@ -636,6 +644,7 @@ const incrementScore = (num)=>{
 };
 const gameOver = ()=>{
     setTimeout(()=>{
+        doneSound.play();
         _sweetalert2JsDefault.default.fire({
             title: 'Selesai!',
             text: 'Permainan sudah selesai!',
@@ -659,6 +668,7 @@ const startGame = ()=>{
 };
 startGame();
 xIcon.addEventListener('click', ()=>{
+    clickSound.play();
     _sweetalert2JsDefault.default.fire({
         title: 'Keluar?',
         text: 'Kamu yakin ingin keluar dari permainan?',
@@ -673,6 +683,8 @@ xIcon.addEventListener('click', ()=>{
         if (result.isConfirmed) return window.location.assign('level.html');
     });
 });
+petunjuk.addEventListener('click', ()=>clickSound.play()
+);
 
 },{"sweetalert2/dist/sweetalert2.js":"9Oi7N","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9Oi7N":[function(require,module,exports) {
 /*!

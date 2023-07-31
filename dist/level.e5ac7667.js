@@ -531,6 +531,8 @@ _aosDefault.default.init({
     duration: 1000,
     once: true
 });
+const music = document.getElementById('music');
+music.volume = 0.2;
 
 },{"bootstrap":"h36JB","aos":"eRzTM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","sweetalert2/src/sweetalert2.scss":"1MAAF"}],"h36JB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
