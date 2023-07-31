@@ -13,4 +13,4 @@ AOS.init({
 });
 
 const music = document.getElementById('music');
-music.volume = 0.2;
+music.volume = 0.5;
