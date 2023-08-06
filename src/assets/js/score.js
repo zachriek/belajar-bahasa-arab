@@ -1,23 +1,24 @@
 import ApexCharts from 'apexcharts';
 
-const quizScoreText = document.getElementById('quiz-score-text');
-const matchScoreText = document.getElementById('match-score-text');
+const game1ScoreText = document.getElementById('game1-score-text');
+const game2ScoreText = document.getElementById('game2-score-text');
 const memoryScoreText = document.getElementById('memory-score-text');
 
-const MAX_SCORE_QUIZ = 100;
-const QUIZ_SCORE = window.localStorage.getItem('quizScore') ?? 0;
-const QUIZ_SCORE_2 = MAX_SCORE_QUIZ - Number(QUIZ_SCORE);
+const MAX_SCORE_GAME1 = 100;
+const GAME1_SCORE = window.localStorage.getItem('game1Score') ?? 0;
+const GAME1_SCORE_2 = MAX_SCORE_GAME1 - Number(GAME1_SCORE);
 
 const MAX_SCORE_GAME2 = 100;
 const GAME2_SCORE = window.localStorage.getItem('game2Score') ?? 0;
 const GAME2_SCORE_2 = MAX_SCORE_GAME2 - Number(GAME2_SCORE);
 
 const MAX_SCORE_MEMORY = 100;
-const MEMORY_SCORE = window.localStorage.getItem('memoryScore') ?? 0;
+// const MEMORY_SCORE = window.localStorage.getItem('memoryScore') ?? 0;
+const MEMORY_SCORE = 0;
 const MEMORY_SCORE_2 = MAX_SCORE_MEMORY - Number(MEMORY_SCORE);
 
-quizScoreText.innerText = `Skor: ${QUIZ_SCORE}/${MAX_SCORE_QUIZ}`;
-matchScoreText.innerText = `Skor: ${GAME2_SCORE}/${MAX_SCORE_GAME2}`;
+game1ScoreText.innerText = `Skor: ${GAME1_SCORE}/${MAX_SCORE_GAME1}`;
+game2ScoreText.innerText = `Skor: ${GAME2_SCORE}/${MAX_SCORE_GAME2}`;
 memoryScoreText.innerText = `Skor: ${MEMORY_SCORE}/${MAX_SCORE_MEMORY}`;
 
 let chartOptions = {
@@ -56,12 +57,12 @@ let chartOptions = {
   },
 };
 
-let quizChartOptions = {
+let game1ChartOptions = {
   ...chartOptions,
-  series: [Number(QUIZ_SCORE), Number(QUIZ_SCORE_2)],
+  series: [Number(GAME1_SCORE), Number(GAME1_SCORE_2)],
 };
 
-let matchChartOptions = {
+let game2ChartOptions = {
   ...chartOptions,
   series: [Number(GAME2_SCORE), Number(GAME2_SCORE_2)],
 };
@@ -71,11 +72,11 @@ let memoryChartOptions = {
   series: [Number(MEMORY_SCORE), Number(MEMORY_SCORE_2)],
 };
 
-let quizChart = new ApexCharts(document.querySelector('#quiz-chart'), quizChartOptions);
-quizChart.render();
+let game1Chart = new ApexCharts(document.querySelector('#game1-chart'), game1ChartOptions);
+game1Chart.render();
 
-let matchChart = new ApexCharts(document.querySelector('#match-chart'), matchChartOptions);
-matchChart.render();
+let game2Chart = new ApexCharts(document.querySelector('#game2-chart'), game2ChartOptions);
+game2Chart.render();
 
 let memoryChart = new ApexCharts(document.querySelector('#memory-chart'), memoryChartOptions);
 memoryChart.render();

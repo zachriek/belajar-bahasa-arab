@@ -73,8 +73,8 @@ const handleClickArab = () => {
   const matchCards = document.querySelectorAll('.match-card');
 
   matchCards.forEach((card) => {
-    if (!card.classList.contains('flipped')) {
-      card.addEventListener('click', (e) => {
+    card.addEventListener('click', (e) => {
+      if (!card.classList.contains('flipped')) {
         clickSound.play();
         card.classList.add('flipped');
         if (!selected1) {
@@ -118,8 +118,8 @@ const handleClickArab = () => {
           selected1 = undefined;
           selected2 = undefined;
         }
-      });
-    }
+      }
+    });
   });
 };
 

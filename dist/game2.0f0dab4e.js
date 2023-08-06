@@ -588,42 +588,44 @@ const handleClickSoundCard = ()=>{
 const handleClickArab = ()=>{
     const matchCards = document.querySelectorAll('.match-card');
     matchCards.forEach((card)=>{
-        if (!card.classList.contains('flipped')) card.addEventListener('click', (e)=>{
-            clickSound.play();
-            card.classList.add('flipped');
-            if (!selected1) selected1 = card.dataset['latin'];
-            else {
-                clicked++;
-                if (clicked === MAX_QUESTIONS) gameOver();
-                selected2 = card.dataset['latin'];
-                if (selected1 && selected2 && selected1 === selected2 && selected2 === soundCard.dataset['latin'] && selected1 === soundCard.dataset['latin']) {
-                    incrementScore(CORRECT_BONUS);
-                    setTimeout(()=>{
-                        successSound.play();
+        card.addEventListener('click', (e)=>{
+            if (!card.classList.contains('flipped')) {
+                clickSound.play();
+                card.classList.add('flipped');
+                if (!selected1) selected1 = card.dataset['latin'];
+                else {
+                    clicked++;
+                    if (clicked === MAX_QUESTIONS) gameOver();
+                    selected2 = card.dataset['latin'];
+                    if (selected1 && selected2 && selected1 === selected2 && selected2 === soundCard.dataset['latin'] && selected1 === soundCard.dataset['latin']) {
+                        incrementScore(CORRECT_BONUS);
+                        setTimeout(()=>{
+                            successSound.play();
+                            _sweetalert2JsDefault.default.fire({
+                                title: 'Benar!',
+                                text: 'Jawaban kamu benar!',
+                                icon: 'success',
+                                imageUrl: 'true.gif',
+                                imageWidth: 150,
+                                imageAlt: 'Custom image'
+                            });
+                        }, 200);
+                    } else setTimeout(()=>{
+                        failSound.play();
                         _sweetalert2JsDefault.default.fire({
-                            title: 'Benar!',
-                            text: 'Jawaban kamu benar!',
-                            icon: 'success',
-                            imageUrl: 'true.gif',
+                            title: 'Kurang Tepat!',
+                            text: 'Jawaban kamu kurang tepat!',
+                            icon: 'error',
+                            imageUrl: 'false.gif',
                             imageWidth: 150,
                             imageAlt: 'Custom image'
                         });
                     }, 200);
-                } else setTimeout(()=>{
-                    failSound.play();
-                    _sweetalert2JsDefault.default.fire({
-                        title: 'Kurang Tepat!',
-                        text: 'Jawaban kamu kurang tepat!',
-                        icon: 'error',
-                        imageUrl: 'false.gif',
-                        imageWidth: 150,
-                        imageAlt: 'Custom image'
-                    });
-                }, 200);
-                currentQuestionIndex++;
-                soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
-                selected1 = undefined;
-                selected2 = undefined;
+                    currentQuestionIndex++;
+                    soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
+                    selected1 = undefined;
+                    selected2 = undefined;
+                }
             }
         });
     });

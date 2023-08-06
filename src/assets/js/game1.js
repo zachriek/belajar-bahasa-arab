@@ -108,7 +108,7 @@ const gameOver = () => {
       imageWidth: 150,
       imageAlt: 'Custom image',
     }).then(() => {
-      localStorage.setItem('matchScore', score);
+      localStorage.setItem('game1Score', score);
       return window.location.assign('score.html');
     });
   }, 1000);
@@ -135,10 +135,10 @@ const handleClickImage = () => {
 
   latinCards.forEach((card) => {
     card.addEventListener('click', (e) => {
-      if (selectedArab) {
-        const audio = new Audio(`benda_indo/${card.dataset['latin']}.aac`);
-        audio.play();
+      const audio = new Audio(`benda_indo/${card.dataset['latin']}.aac`);
+      audio.play();
 
+      if (selectedArab) {
         if (clicked === MAX_QUESTIONS - 1) {
           gameOver();
         }
