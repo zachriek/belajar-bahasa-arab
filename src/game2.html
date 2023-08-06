@@ -16,10 +16,13 @@
   <body>
     <section class="mt-5" id="match" style="margin-bottom: 200px">
       <div class="container">
+        <!-- Teks Skor -->
         <div class="text-center mt-5 mx-auto" style="width: max-content">
           <h5>Skor</h5>
           <h2 id="score">0</h2>
         </div>
+
+        <!-- Papan Permainan -->
         <div class="row justify-content-center mt-5">
           <div class="col-12 d-flex justify-content-center mb-5">
             <div class="card sound-card rounded">
@@ -35,6 +38,7 @@
       </div>
     </section>
 
+    <!-- Tombol Petunjuk -->
     <div style="position: fixed; width: max-content; height: max-content; bottom: 90px; left: 100px; z-index: 3">
       <h5>Petunjuk</h5>
     </div>
@@ -48,11 +52,12 @@
       <img src="./assets/images/petunjuk.gif" alt="petunjuk" width="120" style="border-radius: 50%" />
     </div>
 
+    <!-- Tombol Keluar -->
     <div id="x-icon" style="position: fixed; width: max-content; height: max-content; bottom: 25px; right: 25px; cursor: pointer; z-index: 2">
       <i class="bi bi-x-circle-fill" style="font-size: 3rem"></i>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Petunjuk -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -76,22 +81,27 @@
       </div>
     </div>
 
+    <!-- Musik -->
     <audio autoplay loop id="music">
       <source src="./assets/audio/music3.mp3" type="audio/mp3" />
     </audio>
 
+    <!-- Suara Klik -->
     <audio id="click-sound">
       <source src="./assets/audio/click.mp3" type="audio/mp3" />
     </audio>
 
+    <!-- Suara Jika Jawaban Benar -->
     <audio id="success-sound">
       <source src="./assets/audio/success.mp3" type="audio/mp3" />
     </audio>
 
+    <!-- Suara Jika Jawaban Kurang Tepat -->
     <audio id="fail-sound">
       <source src="./assets/audio/fail.mp3" type="audio/mp3" />
     </audio>
 
+    <!-- Suara Jika Permainan Selesai -->
     <audio id="done-sound">
       <source src="./assets/audio/done.mp3" type="audio/mp3" />
     </audio>
