@@ -65,6 +65,7 @@ const appendArab = () => {
 const handleClickSoundCard = () => {
   soundCard.addEventListener('click', () => {
     const audio = new Audio(`keluarga_arab/${soundCard.dataset['latin']}.aac`);
+    audio.currentTime = 0;
     audio.play();
   });
 };
@@ -89,6 +90,8 @@ const handleClickArab = () => {
             incrementScore(CORRECT_BONUS);
             setTimeout(() => {
               successSound.play();
+              successSound.volume = 0.1;
+
               Swal.fire({
                 title: 'Benar!',
                 text: 'Jawaban kamu benar!',
@@ -101,6 +104,8 @@ const handleClickArab = () => {
           } else {
             setTimeout(() => {
               failSound.play();
+              failSound.volume = 0.1;
+
               Swal.fire({
                 title: 'Kurang Tepat!',
                 text: 'Jawaban kamu kurang tepat!',
@@ -135,6 +140,8 @@ const incrementScore = (num) => {
 const gameOver = () => {
   setTimeout(() => {
     doneSound.play();
+    doneSound.volume = 0.1;
+
     Swal.fire({
       title: 'Selesai!',
       text: 'Permainan sudah selesai!',

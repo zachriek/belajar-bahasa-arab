@@ -122,6 +122,7 @@ const handleClickMateri = () => {
   materiCards.forEach((card) => {
     card.addEventListener('click', () => {
       const audio = new Audio(`benda_arab/${card.dataset['latin']}.aac`);
+      audio.currentTime = 0;
       audio.play();
     });
   });
