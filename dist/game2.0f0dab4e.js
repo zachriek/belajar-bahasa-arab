@@ -524,9 +524,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _sweetalert2Js = require("sweetalert2/dist/sweetalert2.js");
 var _sweetalert2JsDefault = parcelHelpers.interopDefault(_sweetalert2Js);
 const matchRow = document.querySelector('.match-row');
+const soundCard = document.querySelector('.sound-card');
 const scoreText = document.getElementById('score');
-const overlay = document.getElementById('overlay');
-const overlayText = document.getElementById('overlay-text');
 const xIcon = document.getElementById('x-icon');
 const petunjuk = document.getElementById('petunjuk');
 const clickSound = document.getElementById('click-sound');
@@ -540,26 +539,27 @@ let selected1;
 let selected2;
 const MAX_QUESTIONS = 5;
 const CORRECT_BONUS = 20;
+let currentQuestionIndex = 0;
 const words = [
     {
         arab: 'اَلْأُسْرَةُ',
-        latin: 'al-Usrotu'
+        latin: 'keluarga'
     },
     {
         arab: 'اَلْأَقْرِبَاءُ',
-        latin: 'al-Aqribaa u'
+        latin: 'kerabat'
     },
     {
         arab: 'اَلْأَبَوَيْنِ',
-        latin: 'al-Abawaini'
+        latin: 'ortu'
     },
     {
         arab: 'أُمٌ',
-        latin: 'Ummun'
+        latin: 'ibu'
     },
     {
         arab: 'اَبٌ',
-        latin: 'Abun'
+        latin: 'bapak'
     }, 
 ];
 const appendArab = ()=>{
@@ -572,11 +572,18 @@ const appendArab = ()=>{
       <div class="match-card" data-latin="${word.latin}">
         <div class="card">
           <div class="card-body bg-secondary">
-            <p class="font-uthmanic mb-1" style="font-size: 2rem;">${word.arab}</p>
+            <p class="font-uthmanic" style="font-size: 2rem;">${word.arab}</p>
           </div>
         </div>
       </div>
     `;
+    soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
+};
+const handleClickSoundCard = ()=>{
+    soundCard.addEventListener('click', ()=>{
+        const audio = new Audio(`keluarga_arab/${soundCard.dataset['latin']}.aac`);
+        audio.play();
+    });
 };
 const handleClickArab = ()=>{
     const matchCards = document.querySelectorAll('.match-card');
@@ -589,7 +596,7 @@ const handleClickArab = ()=>{
                 clicked++;
                 if (clicked === MAX_QUESTIONS) gameOver();
                 selected2 = card.dataset['latin'];
-                if (selected1 === selected2) {
+                if (selected1 && selected2 && selected1 === selected2 && selected2 === soundCard.dataset['latin'] && selected1 === soundCard.dataset['latin']) {
                     incrementScore(CORRECT_BONUS);
                     setTimeout(()=>{
                         successSound.play();
@@ -613,6 +620,8 @@ const handleClickArab = ()=>{
                         imageAlt: 'Custom image'
                     });
                 }, 200);
+                currentQuestionIndex++;
+                soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
                 selected1 = undefined;
                 selected2 = undefined;
             }
@@ -647,6 +656,7 @@ const gameOver = ()=>{
 const startGame = ()=>{
     showScore();
     appendArab();
+    handleClickSoundCard();
     handleClickArab();
 };
 startGame();

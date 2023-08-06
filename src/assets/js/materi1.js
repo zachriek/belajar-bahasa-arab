@@ -100,4 +100,18 @@ const appendMateri = () => {
   }
 };
 
-appendMateri();
+const handleClickMateri = () => {
+  const materiCards = document.querySelectorAll('.materi');
+
+  materiCards.forEach((card) => {
+    const audio = new Audio(`benda_arab/${card.dataset['latin']}.aac`);
+    audio.play();
+  });
+};
+
+const playGame = () => {
+  appendMateri();
+  handleClickMateri();
+};
+
+playGame();

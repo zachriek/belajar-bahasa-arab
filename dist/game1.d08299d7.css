@@ -1,0 +1,11 @@
+.arab-card,
+.latin-card {
+  cursor: pointer;
+  transition: none;
+}
+
+.arab-card.card-active,
+.latin-card.card-active {
+  border: 5px solid var(--bs-primary);
+}
+/*# sourceMappingURL=game1.d08299d7.css.map */

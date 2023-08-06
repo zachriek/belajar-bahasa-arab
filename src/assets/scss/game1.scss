@@ -1,0 +1,10 @@
+.arab-card,
+.latin-card {
+  cursor: pointer;
+  transition: none;
+}
+
+.arab-card.card-active,
+.latin-card.card-active {
+  border: 5px solid var(--bs-primary);
+}

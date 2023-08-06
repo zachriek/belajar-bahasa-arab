@@ -64,29 +64,29 @@
               <div class="card game-card bg-secondary text-center">
                 <img src="./assets/images/benda.png" alt="benda" class="card-img-top" />
                 <div class="card-body">
-                  <i class="bi bi-play-circle-fill" style="font-size: 2rem"></i>
+                  <i class="bi bi-info-circle-fill" style="font-size: 2rem"></i>
                   <h5 class="card-title">Benda di sekitar</h5>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="900">
-            <a href="./medium.html" class="card-link">
+            <a href="#" class="card-link">
               <div class="card game-card bg-secondary text-center">
                 <img src="./assets/images/kata.png" alt="kata.png" class="card-img-top" />
                 <div class="card-body">
-                  <i class="bi bi-play-circle-fill" style="font-size: 2rem"></i>
+                  <i class="bi bi-info-circle-fill" style="font-size: 2rem"></i>
                   <h5 class="card-title">Mendengarkan dan menyamakan kata yang sama</h5>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="1200">
-            <a href="./hard.html" class="card-link">
+            <a href="#" class="card-link">
               <div class="card game-card bg-secondary text-center">
                 <img src="./assets/images/kata.png" alt="kata.png" class="card-img-top" />
                 <div class="card-body">
-                  <i class="bi bi-play-circle-fill" style="font-size: 2rem"></i>
+                  <i class="bi bi-info-circle-fill" style="font-size: 2rem"></i>
                   <h5 class="card-title">Menceklis kata yang disebutkan</h5>
                 </div>
               </div>
@@ -100,7 +100,26 @@
       <source src="./assets/audio/music2.mp3" type="audio/mp3" />
     </audio>
 
+    <audio id="click-sound">
+      <source src="./assets/audio/click.mp3" type="audio/mp3" />
+    </audio>
+
     <!-- JS Mainfile -->
     <script type="module" src="./assets/js/main.js"></script>
+    <script>
+      const cardLinks = document.querySelectorAll('.card-link');
+      const clickSound = document.getElementById('click-sound');
+
+      cardLinks.forEach((card) => {
+        card.addEventListener('mousemove', () => {
+          clickSound.currentTime = 0;
+          clickSound.play();
+        });
+        card.addEventListener('mouseout', () => {
+          clickSound.currentTime = 0;
+          clickSound.pause();
+        });
+      });
+    </script>
   </body>
 </html>
