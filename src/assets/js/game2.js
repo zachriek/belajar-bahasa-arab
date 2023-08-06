@@ -132,7 +132,7 @@ const gameOver = () => {
       imageWidth: 150,
       imageAlt: 'Custom image',
     }).then(() => {
-      localStorage.setItem('memoryScore', score);
+      localStorage.setItem('game2Score', score);
       return window.location.assign('score.html');
     });
   }, 1000);

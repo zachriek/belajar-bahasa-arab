@@ -8,16 +8,16 @@ const MAX_SCORE_QUIZ = 100;
 const QUIZ_SCORE = window.localStorage.getItem('quizScore') ?? 0;
 const QUIZ_SCORE_2 = MAX_SCORE_QUIZ - Number(QUIZ_SCORE);
 
-const MAX_SCORE_MATCH = 100;
-const MATCH_SCORE = window.localStorage.getItem('matchScore') ?? 0;
-const MATCH_SCORE_2 = MAX_SCORE_MATCH - Number(MATCH_SCORE);
+const MAX_SCORE_GAME2 = 100;
+const GAME2_SCORE = window.localStorage.getItem('game2Score') ?? 0;
+const GAME2_SCORE_2 = MAX_SCORE_GAME2 - Number(GAME2_SCORE);
 
 const MAX_SCORE_MEMORY = 100;
 const MEMORY_SCORE = window.localStorage.getItem('memoryScore') ?? 0;
 const MEMORY_SCORE_2 = MAX_SCORE_MEMORY - Number(MEMORY_SCORE);
 
 quizScoreText.innerText = `Skor: ${QUIZ_SCORE}/${MAX_SCORE_QUIZ}`;
-matchScoreText.innerText = `Skor: ${MATCH_SCORE}/${MAX_SCORE_MATCH}`;
+matchScoreText.innerText = `Skor: ${GAME2_SCORE}/${MAX_SCORE_GAME2}`;
 memoryScoreText.innerText = `Skor: ${MEMORY_SCORE}/${MAX_SCORE_MEMORY}`;
 
 let chartOptions = {
@@ -63,7 +63,7 @@ let quizChartOptions = {
 
 let matchChartOptions = {
   ...chartOptions,
-  series: [Number(MATCH_SCORE), Number(MATCH_SCORE_2)],
+  series: [Number(GAME2_SCORE), Number(GAME2_SCORE_2)],
 };
 
 let memoryChartOptions = {
