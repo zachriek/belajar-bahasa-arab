@@ -99,7 +99,7 @@ const appendArab = () => {
 const gameOver = () => {
   setTimeout(() => {
     doneSound.play();
-    doneSound.volume = 0.1;
+    doneSound.volume = 0.5;
 
     Swal.fire({
       title: 'Selesai!',
@@ -126,8 +126,6 @@ const handleClickImage = () => {
       clickSound.play();
 
       const audio = new Audio(`benda_arab/${card.dataset['latin']}.aac`);
-      audio.pause();
-      audio.currentTime = 0;
       audio.play();
 
       selectedArab = card.dataset['latin'];
@@ -141,8 +139,6 @@ const handleClickImage = () => {
   latinCards.forEach((card) => {
     card.addEventListener('click', (e) => {
       const audio = new Audio(`benda_indo/${card.dataset['latin']}.aac`);
-      audio.pause();
-      audio.currentTime = 0;
       audio.play();
 
       if (selectedArab) {
@@ -158,7 +154,7 @@ const handleClickImage = () => {
           incrementScore(CORRECT_BONUS);
 
           successSound.play();
-          successSound.volume = 0.1;
+          successSound.volume = 0.5;
 
           Swal.fire({
             title: 'Benar!',
@@ -170,7 +166,7 @@ const handleClickImage = () => {
           });
         } else {
           failSound.play();
-          failSound.volume = 0.1;
+          failSound.volume = 0.5;
 
           Swal.fire({
             title: 'Kurang Tepat!',

@@ -65,8 +65,6 @@ const appendArab = () => {
 const handleClickSoundCard = () => {
   soundCard.addEventListener('click', () => {
     const audio = new Audio(`keluarga_arab/${soundCard.dataset['latin']}.aac`);
-    audio.pause();
-    audio.currentTime = 0;
     audio.play();
   });
 };
@@ -91,7 +89,7 @@ const handleClickArab = () => {
             incrementScore(CORRECT_BONUS);
             setTimeout(() => {
               successSound.play();
-              successSound.volume = 0.1;
+              successSound.volume = 0.5;
 
               Swal.fire({
                 title: 'Benar!',
@@ -105,7 +103,7 @@ const handleClickArab = () => {
           } else {
             setTimeout(() => {
               failSound.play();
-              failSound.volume = 0.1;
+              failSound.volume = 0.5;
 
               Swal.fire({
                 title: 'Kurang Tepat!',
@@ -141,7 +139,7 @@ const incrementScore = (num) => {
 const gameOver = () => {
   setTimeout(() => {
     doneSound.play();
-    doneSound.volume = 0.1;
+    doneSound.volume = 0.5;
 
     Swal.fire({
       title: 'Selesai!',

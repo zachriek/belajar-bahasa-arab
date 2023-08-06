@@ -617,7 +617,7 @@ const appendArab = ()=>{
 const gameOver = ()=>{
     setTimeout(()=>{
         doneSound.play();
-        doneSound.volume = 0.1;
+        doneSound.volume = 0.5;
         _sweetalert2JsDefault.default.fire({
             title: 'Selesai!',
             text: 'Permainan sudah selesai!',
@@ -640,8 +640,6 @@ const handleClickImage = ()=>{
         card.addEventListener('click', (e)=>{
             clickSound.play();
             const audio = new Audio(`benda_arab/${card.dataset['latin']}.aac`);
-            audio.pause();
-            audio.currentTime = 0;
             audio.play();
             selectedArab = card.dataset['latin'];
             arabCards.forEach((card2)=>card2.classList.remove('card-active')
@@ -652,8 +650,6 @@ const handleClickImage = ()=>{
     latinCards.forEach((card)=>{
         card.addEventListener('click', (e)=>{
             const audio = new Audio(`benda_indo/${card.dataset['latin']}.aac`);
-            audio.pause();
-            audio.currentTime = 0;
             audio.play();
             if (selectedArab) {
                 if (clicked === MAX_QUESTIONS - 1) gameOver();
@@ -662,7 +658,7 @@ const handleClickImage = ()=>{
                 if (selectedArab === selectedLatin) {
                     incrementScore(CORRECT_BONUS);
                     successSound.play();
-                    successSound.volume = 0.1;
+                    successSound.volume = 0.5;
                     _sweetalert2JsDefault.default.fire({
                         title: 'Benar!',
                         text: 'Jawaban kamu benar!',
@@ -673,7 +669,7 @@ const handleClickImage = ()=>{
                     });
                 } else {
                     failSound.play();
-                    failSound.volume = 0.1;
+                    failSound.volume = 0.5;
                     _sweetalert2JsDefault.default.fire({
                         title: 'Kurang Tepat!',
                         text: 'Jawaban kamu kurang tepat!',
