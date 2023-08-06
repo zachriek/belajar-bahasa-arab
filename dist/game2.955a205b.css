@@ -1,6 +1,11 @@
 .match-card {
   cursor: pointer;
   border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.match-card:hover {
+  transform: scale(0.9);
 }
 
 .match-card.flipped {

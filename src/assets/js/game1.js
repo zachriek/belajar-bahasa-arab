@@ -87,6 +87,7 @@ const appendArab = () => {
         <div class="card latin-card bg-secondary" data-latin="${word.latin}">
           <div class="card-body">
             <img src="${word.latin}.png" alt="${word.latin}" width="100" data-latin="${word.latin}" />
+            <p class="card-text text-center mt-3">${word.latin}</p>
           </div>
         </div>
       </div>

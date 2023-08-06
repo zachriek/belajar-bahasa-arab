@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"680F4":[function(require,module,exports) {
+})({"ar2IJ":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "0b9d2059efdfb78a";
+module.bundle.HMR_BUNDLE_ID = "84481922f988ed45";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -518,104 +518,110 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"gqUSw":[function(require,module,exports) {
+},{}],"hVunN":[function(require,module,exports) {
 const materiRow = document.querySelector('.materi-row');
 const words = [
     {
-        arab: 'كِـتَابٌ',
-        latin: 'Kitaabun',
-        arti: 'Buku',
-        sound: 'buku'
+        arab: 'اَلْأُسْرَةُ',
+        latin: 'al-Usrotu',
+        arti: 'Keluarga',
+        sound: 'keluarga'
     },
     {
-        arab: 'كُــرَاسَةٌ',
-        latin: 'Kuroosatun',
-        arti: 'Buku Tulis',
-        sound: 'buku_tulis'
+        arab: 'اَلْأَقْرِبَاءُ',
+        latin: 'al-Aqribaa u',
+        arti: 'Kerabat',
+        sound: 'kerabat'
     },
     {
-        arab: 'كَشْفُ الْغِيَابُ',
-        latin: 'Kasyful Ghiyaab',
-        arti: 'Buku Absen',
-        sound: 'buku_absen'
+        arab: 'اَلْأَبَوَيْنِ',
+        latin: 'al-Abawaini',
+        arti: 'Kedua Orang Tua',
+        sound: 'ortu'
     },
     {
-        arab: 'قِرْطاَسٌ',
-        latin: 'Qirthoosun',
-        arti: 'Kertas',
-        sound: 'kertas'
+        arab: 'أُمٌ',
+        latin: 'Ummun',
+        arti: 'Ibu',
+        sound: 'ibu'
     },
     {
-        arab: 'قَلَـمٌ',
-        latin: 'Qolamun',
-        arti: 'Pulpen',
-        sound: 'pulpen'
+        arab: 'اَبٌ',
+        latin: 'Abun',
+        arti: 'Bapak',
+        sound: 'bapak'
     },
     {
-        arab: 'مِرْسَمٌ',
-        latin: 'Mirsamun',
-        arti: 'Pensil',
-        sound: 'pensil'
+        arab: 'جَدٌّ',
+        latin: 'Jaddun',
+        arti: 'Kakek',
+        sound: 'kakek'
     },
     {
-        arab: 'قَلَـمُ الْحِبْرِ',
-        latin: 'Qolamul Hibri',
-        arti: 'Spidol',
-        sound: 'spidol'
+        arab: 'جَدَّةٌ',
+        latin: 'Jaddatun',
+        arti: 'Nenek',
+        sound: 'nenek'
     },
     {
-        arab: 'مِقْلَمَةٌ',
-        latin: 'Miqlamatun',
-        arti: 'Wadah Pulpen',
-        sound: 'wadah_pulpen'
+        arab: 'وَلَدٌ',
+        latin: 'Waladun',
+        arti: 'Anak Laki-laki',
+        sound: 'anak_laki-laki'
     },
     {
-        arab: 'حِبْرٌ',
-        latin: 'Hibrun',
-        arti: 'Tinta',
-        sound: 'tinta'
+        arab: 'بِنْتٌ',
+        latin: 'Bintun',
+        arti: 'Anak Perempuan',
+        sound: 'anak_perempuan'
     },
     {
-        arab: 'مِحْبَرَةٌ',
-        latin: 'Mihbarotun',
-        arti: 'Tempat Tinta',
-        sound: 'tempat_tinta'
+        arab: 'أَخٌ',
+        latin: 'Akhun',
+        arti: 'Saudara Laki-laki',
+        sound: 'saudara_laki-laki'
     },
     {
-        arab: 'طَبَاشِيْرٌ',
-        latin: 'Thobaasyiirun',
-        arti: 'Kapur',
-        sound: 'kapur'
+        arab: 'أُخْتٌ',
+        latin: 'Ukhtun',
+        arti: 'Saudara Perempuan',
+        sound: 'saudara_perempuan'
     },
     {
-        arab: 'مِمْسَحَةٌ',
-        latin: 'Mimsahatun',
-        arti: 'Penghapus',
-        sound: 'penghapus'
+        arab: 'أَخٌ شَقِيْقٌ',
+        latin: 'Akhun syaqiiqun',
+        arti: 'Saudara Kandung (LK)',
+        sound: 'sk_lk'
     },
     {
-        arab: 'مِسْطَرَةٌ',
-        latin: 'Misthorotun',
-        arti: 'Penggaris',
-        sound: 'penggaris'
+        arab: 'أُخْتٌ شَقِيْقَةٌ',
+        latin: 'Ukhtun syaqiiqotun',
+        arti: 'Saudara Kandung (PR)',
+        sound: 'sk_pr'
     },
     {
-        arab: 'كِتَابُ التَّدْرِيْس',
-        latin: 'Kitabu Tadris',
-        arti: 'Buku Pelajaran',
-        sound: 'buku_pelajaran'
+        arab: 'أَخُ صَغِيْرٌ',
+        latin: 'Akhun Shogiirun',
+        arti: 'Adik Laki-laki',
+        sound: 'adik_laki-laki'
     },
     {
-        arab: 'مُزِيْلٌ',
-        latin: 'Muzilun',
-        arti: 'Tipe Ex',
-        sound: 'tipe_ex'
+        arab: 'أُخْتُ صَغِيْرَةٌ',
+        latin: 'Ukhtun Shogiirotun',
+        arti: 'Adik Perempuan',
+        sound: 'adik_perempuan'
     },
     {
-        arab: 'مُعْجَمٌ',
-        latin: 'Mu’jamun',
-        arti: 'Kamus',
-        sound: 'kamus'
+        arab: 'أَخٌ كَبِيْرٌ',
+        latin: 'Akhun Kabiirun',
+        arti: 'Kakak Laki-laki',
+        sound: 'kakak_laki-laki'
+    },
+    {
+        arab: 'أُخْتُ كَبِيْرَةٌ',
+        latin: 'Ukhtun Kabiirotun',
+        arti: 'Kakak Perempuan',
+        sound: 'kakak_perempuan'
     }, 
 ];
 const appendMateri = ()=>{
@@ -636,7 +642,7 @@ const handleClickMateri = ()=>{
     const materiCards = document.querySelectorAll('.materi');
     materiCards.forEach((card)=>{
         card.addEventListener('click', ()=>{
-            const audio = new Audio(`benda_arab/${card.dataset['latin']}.aac`);
+            const audio = new Audio(`keluarga_arab/${card.dataset['latin']}.aac`);
             audio.play();
         });
     });
@@ -647,6 +653,6 @@ const playGame = ()=>{
 };
 playGame();
 
-},{}]},["680F4","gqUSw"], "gqUSw", "parcelRequire7dae")
+},{}]},["ar2IJ","hVunN"], "hVunN", "parcelRequire7dae")
 
-//# sourceMappingURL=materi1.efdfb78a.js.map
+//# sourceMappingURL=materi2.f988ed45.js.map

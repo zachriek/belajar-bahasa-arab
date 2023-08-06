@@ -1,7 +1,12 @@
 .arab-card,
 .latin-card {
   cursor: pointer;
-  transition: none;
+  transition: transform .3s ease-in-out;
+}
+
+.arab-card:hover,
+.latin-card:hover {
+  transform: scale(0.9);
 }
 
 .arab-card.card-active,
