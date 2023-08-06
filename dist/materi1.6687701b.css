@@ -1,0 +1,9 @@
+.materi {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.materi:hover {
+  transform: scale(0.95);
+}
+/*# sourceMappingURL=materi1.6687701b.css.map */

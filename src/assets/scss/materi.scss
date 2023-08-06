@@ -1,0 +1,8 @@
+.materi {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.materi:hover {
+  transform: scale(0.95);
+}

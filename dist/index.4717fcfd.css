@@ -14347,6 +14347,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Uthmanic";
+  src: url("uthmanic.bc21af5f.otf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -14365,6 +14369,9 @@ body {
 }
 ul {
   list-style: none;
+}
+.font-uthmanic {
+  font-family: "Uthmanic", serif;
 }
 .section {
   margin-top: 100px;
@@ -14404,6 +14411,9 @@ section#hero {
     text-align: center;
     margin-bottom: 100px;
   }
+}
+.game-card {
+  min-height: 400px;
 }
 .swal2-popup.swal2-toast {
   box-sizing: border-box;

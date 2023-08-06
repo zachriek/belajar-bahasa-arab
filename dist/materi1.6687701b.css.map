@@ -1,0 +1,1 @@
+{"mappings":"AAAA;EACE;EACA;;;AAGF;EACE","sources":["src/assets/scss/materi.scss"],"sourcesContent":[".materi {\r\n  cursor: pointer;\r\n  transition: all .3s ease-in-out;\r\n}\r\n\r\n.materi:hover {\r\n  transform: scale(0.95);\r\n}"],"names":[],"version":3,"file":"materi1.6687701b.css.map","sourceRoot":"/__parcel_source_root/"}

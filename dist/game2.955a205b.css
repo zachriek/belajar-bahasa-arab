@@ -1,0 +1,15 @@
+.match-card {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.match-card.flipped {
+  cursor: pointer;
+  border: 3px solid var(--bs-primary);
+}
+
+.sound-card {
+  cursor: pointer;
+}
+/*# sourceMappingURL=game2.955a205b.css.map */
