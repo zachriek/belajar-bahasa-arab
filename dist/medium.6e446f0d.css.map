@@ -1,1 +1,0 @@
-{"mappings":"AAAA;AAAA;EAEE;;;AAGF;EACE","sources":["src/assets/scss/medium.scss"],"sourcesContent":[".hijaiyah-img,\r\n.hijaiyah-latin-img {\r\n  cursor: pointer;\r\n}\r\n\r\n.card .card-body:has(> .hijaiyah-active) {\r\n  border: 10px solid var(--bs-primary);\r\n}"],"names":[],"version":3,"file":"medium.6e446f0d.css.map","sourceRoot":"/__parcel_source_root/"}

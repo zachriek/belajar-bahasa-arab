@@ -1,9 +1,0 @@
-.hijaiyah-img,
-.hijaiyah-latin-img {
-  cursor: pointer;
-}
-
-.card .card-body:has(> .hijaiyah-active) {
-  border: 10px solid var(--bs-primary);
-}
-/*# sourceMappingURL=medium.6e446f0d.css.map */
