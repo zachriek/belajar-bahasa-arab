@@ -640,6 +640,7 @@ const handleClickImage = ()=>{
         card.addEventListener('click', (e)=>{
             clickSound.play();
             const audio = new Audio(`benda_arab/${card.dataset['latin']}.aac`);
+            audio.pause();
             audio.currentTime = 0;
             audio.play();
             selectedArab = card.dataset['latin'];
@@ -651,6 +652,7 @@ const handleClickImage = ()=>{
     latinCards.forEach((card)=>{
         card.addEventListener('click', (e)=>{
             const audio = new Audio(`benda_indo/${card.dataset['latin']}.aac`);
+            audio.pause();
             audio.currentTime = 0;
             audio.play();
             if (selectedArab) {

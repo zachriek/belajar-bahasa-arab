@@ -582,6 +582,7 @@ const appendArab = ()=>{
 const handleClickSoundCard = ()=>{
     soundCard.addEventListener('click', ()=>{
         const audio = new Audio(`keluarga_arab/${soundCard.dataset['latin']}.aac`);
+        audio.pause();
         audio.currentTime = 0;
         audio.play();
     });

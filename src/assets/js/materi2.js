@@ -128,6 +128,7 @@ const handleClickMateri = () => {
   materiCards.forEach((card) => {
     card.addEventListener('click', () => {
       const audio = new Audio(`keluarga_arab/${card.dataset['latin']}.aac`);
+      audio.pause();
       audio.currentTime = 0;
       audio.play();
     });
