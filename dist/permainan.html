@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.917e1949.ico">
 
     <!-- CSS Main File -->
-    <link rel="stylesheet" href="./assets/scss/main.scss" />
+    <link rel="stylesheet" href="/index.4717fcfd.css">
 
     <title>Belajar Bahasa Arab</title>
   </head>
@@ -16,8 +16,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-transparent fixed-top" data-aos="fade-down">
       <div class="container">
-        <a class="navbar-brand" href="./index.html">
-          <img src="./assets/images/quran.png" alt="quran" width="50" />
+        <a class="navbar-brand" href="/index.html">
+          <img src="/hero_2.c234b5d2.png" alt="icon" width="50">
           Belajar Bahasa Arab
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,19 +26,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Beranda</a>
+              <a class="nav-link" href="/index.html">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./materi.html">Materi</a>
+              <a class="nav-link" href="/materi.html">Materi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./level.html">Permainan</a>
+              <a class="nav-link active" href="/permainan.html">Permainan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./petunjuk.html">Petunjuk</a>
+              <a class="nav-link" href="/petunjuk.html">Petunjuk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./score.html">Skor</a>
+              <a class="nav-link" href="/score.html">Skor</a>
             </li>
           </ul>
         </div>
@@ -56,9 +56,9 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="600">
-            <a href="./game1.html" class="card-link">
+            <a href="/game1.html" class="card-link">
               <div class="card game-card bg-secondary text-center">
-                <img src="./assets/images/benda.png" alt="benda" class="card-img-top" />
+                <img src="/benda.a5e5cbab.png" alt="benda" class="card-img-top">
                 <div class="card-body">
                   <i class="bi bi-play-circle-fill" style="font-size: 2rem"></i>
                   <h5 class="card-title">Benda di sekitar</h5>
@@ -67,9 +67,9 @@
             </a>
           </div>
           <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="900">
-            <a href="./game2.html" class="card-link">
+            <a href="/game2.html" class="card-link">
               <div class="card game-card bg-secondary text-center">
-                <img src="./assets/images/kata.png" alt="kata.png" class="card-img-top" />
+                <img src="/kata.0e01f63d.png" alt="kata.png" class="card-img-top">
                 <div class="card-body">
                   <i class="bi bi-play-circle-fill" style="font-size: 2rem"></i>
                   <h5 class="card-title">Mendengarkan dan menyamakan kata yang sama</h5>
@@ -80,7 +80,7 @@
           <div class="col-md-4 col-12 mb-4" data-aos="fade-down" data-aos-delay="1200">
             <a href="#" class="card-link">
               <div class="card game-card bg-secondary text-center">
-                <img src="./assets/images/kata.png" alt="kata.png" class="card-img-top" />
+                <img src="/kata.0e01f63d.png" alt="kata.png" class="card-img-top">
                 <div class="card-body">
                   <i class="bi bi-play-circle-fill" style="font-size: 2rem"></i>
                   <h5 class="card-title">Menceklis kata yang disebutkan</h5>
@@ -93,31 +93,30 @@
     </section>
 
     <!-- Musik -->
-    <audio autoplay loop id="music">
-      <source src="./assets/audio/music2.mp3" type="audio/mp3" />
+    <audio autoplay="" loop="" id="music">
+      <source src="/music2.53c0d302.mp3" type="audio/mp3">
     </audio>
 
     <!-- Suara Klik -->
     <audio id="click-sound">
-      <source src="./assets/audio/click.mp3" type="audio/mp3" />
+      <source src="/click.29450c1e.mp3" type="audio/mp3">
     </audio>
 
     <!-- JS Mainfile -->
-    <script type="module" src="./assets/js/main.js"></script>
-    <script>
-      const cardLinks = document.querySelectorAll('.card-link');
-      const clickSound = document.getElementById('click-sound');
+    <script src="/index.e5ac7667.js" defer=""></script>
+    <script>const cardLinks = document.querySelectorAll('.card-link');
+const clickSound = document.getElementById('click-sound');
+cardLinks.forEach((card)=>{
+    card.addEventListener('mousemove', ()=>{
+        clickSound.currentTime = 0;
+        clickSound.play();
+    });
+    card.addEventListener('mouseout', ()=>{
+        clickSound.currentTime = 0;
+        clickSound.pause();
+    });
+});
 
-      cardLinks.forEach((card) => {
-        card.addEventListener('mousemove', () => {
-          clickSound.currentTime = 0;
-          clickSound.play();
-        });
-        card.addEventListener('mouseout', () => {
-          clickSound.currentTime = 0;
-          clickSound.pause();
-        });
-      });
-    </script>
+</script>
   </body>
 </html>

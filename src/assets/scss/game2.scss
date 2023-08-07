@@ -4,16 +4,12 @@
   transition: transform .3s ease-in-out;
 }
 
-.match-card:hover {
-  transform: scale(0.9);
-}
-
-.match-card.flipped {
-  cursor: pointer;
-  border: 3px solid var(--bs-primary);
-}
-
 .sound-card {
   cursor: pointer;
+}
+
+.match-card:hover,
+.sound-card:hover {
+  transform: scale(0.9);
 }
 

@@ -13,12 +13,10 @@ const failSound = document.getElementById('fail-sound');
 const doneSound = document.getElementById('done-sound');
 
 let score = 0;
-let count = 10;
 let clicked = 0;
-let selected1;
-let selected2;
-const MAX_QUESTIONS = 5;
-const CORRECT_BONUS = 20;
+let selected;
+const MAX_QUESTIONS = 10;
+const CORRECT_BONUS = 10;
 
 let currentQuestionIndex = 0;
 
@@ -43,10 +41,31 @@ const words = [
     arab: 'اَبٌ',
     latin: 'bapak',
   },
+  {
+    arab: 'جَدٌّ',
+    latin: 'kakek',
+  },
+  {
+    arab: 'جَدَّةٌ',
+    latin: 'nenek',
+  },
+  {
+    arab: 'وَلَدٌ',
+    latin: 'anak_laki-laki',
+  },
+  {
+    arab: 'بِنْتٌ',
+    latin: 'anak_perempuan',
+  },
+  {
+    arab: 'أَخٌ',
+    latin: 'saudara_laki-laki',
+  },
 ];
 
 const appendArab = () => {
-  const shuffled = [...words, ...words].sort(() => Math.random() - 0.5);
+  const shuffled = [...words].sort(() => Math.random() - 0.5);
+
   for (const word of shuffled) {
     matchRow.innerHTML += `
       <div class="match-card" data-latin="${word.latin}">
@@ -59,7 +78,7 @@ const appendArab = () => {
     `;
   }
 
-  soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
+  soundCard.dataset['latin'] = shuffled[currentQuestionIndex].latin;
 };
 
 const handleClickSoundCard = () => {
@@ -74,55 +93,48 @@ const handleClickArab = () => {
 
   matchCards.forEach((card) => {
     card.addEventListener('click', (e) => {
-      if (!card.classList.contains('flipped')) {
-        clickSound.play();
-        card.classList.add('flipped');
-        if (!selected1) {
-          selected1 = card.dataset['latin'];
-        } else {
-          clicked++;
-          if (clicked === MAX_QUESTIONS) gameOver();
+      clickSound.play();
 
-          selected2 = card.dataset['latin'];
+      clicked++;
+      if (clicked === MAX_QUESTIONS) gameOver();
 
-          if (selected1 && selected2 && selected1 === selected2 && selected2 === soundCard.dataset['latin'] && selected1 === soundCard.dataset['latin']) {
-            incrementScore(CORRECT_BONUS);
-            setTimeout(() => {
-              successSound.play();
-              successSound.volume = 0.5;
+      selected = card.dataset['latin'];
 
-              Swal.fire({
-                title: 'Benar!',
-                text: 'Jawaban kamu benar!',
-                icon: 'success',
-                imageUrl: 'true.gif',
-                imageWidth: 150,
-                imageAlt: 'Custom image',
-              });
-            }, 200);
-          } else {
-            setTimeout(() => {
-              failSound.play();
-              failSound.volume = 0.5;
+      if (selected === soundCard.dataset['latin']) {
+        incrementScore(CORRECT_BONUS);
+        setTimeout(() => {
+          successSound.play();
+          successSound.volume = 0.5;
 
-              Swal.fire({
-                title: 'Kurang Tepat!',
-                text: 'Jawaban kamu kurang tepat!',
-                icon: 'error',
-                imageUrl: 'false.gif',
-                imageWidth: 150,
-                imageAlt: 'Custom image',
-              });
-            }, 200);
-          }
+          Swal.fire({
+            title: 'Benar!',
+            text: 'Jawaban kamu benar!',
+            icon: 'success',
+            imageUrl: 'true.gif',
+            imageWidth: 150,
+            imageAlt: 'Custom image',
+          });
+        }, 200);
+      } else {
+        setTimeout(() => {
+          failSound.play();
+          failSound.volume = 0.5;
 
-          currentQuestionIndex++;
-          soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
-
-          selected1 = undefined;
-          selected2 = undefined;
-        }
+          Swal.fire({
+            title: 'Kurang Tepat!',
+            text: 'Jawaban kamu kurang tepat!',
+            icon: 'error',
+            imageUrl: 'false.gif',
+            imageWidth: 150,
+            imageAlt: 'Custom image',
+          });
+        }, 200);
       }
+
+      currentQuestionIndex++;
+      soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
+
+      selected = undefined;
     });
   });
 };
