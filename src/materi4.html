@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+
+    <!-- CSS Main File -->
+    <link rel="stylesheet" href="./assets/scss/main.scss" />
+    <link rel="stylesheet" href="./assets/scss/materi.scss" />
+
+    <title>Belajar Bahasa Arab</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent fixed-top" data-aos="fade-down">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./assets/images/hero_2.png" alt="icon" width="50" />
+          Belajar Bahasa Arab
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="./materi.html">Materi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./permainan.html">Permainan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./petunjuk.html">Petunjuk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./score.html">Skor</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section mb-5" id="materi">
+      <div class="container">
+        <!-- Judul Materi -->
+        <div class="row">
+          <div class="col-12 text-center mb-4">
+            <h2 class="heading" data-aos="fade-down">Angka</h2>
+          </div>
+        </div>
+
+        <!-- Isi Materi -->
+        <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="600">
+          <div class="col-12">
+            <div class="materi-row d-flex flex-wrap align-items-center gap-5 border border-3 border-secondary p-5 rounded" style="background: rgba(255, 255, 255, 0.3)"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <audio autoplay loop id="music">
+      <source src="./assets/audio/music2.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- JS Mainfile -->
+    <script type="module" src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/materi4.js"></script>
+  </body>
+</html>
