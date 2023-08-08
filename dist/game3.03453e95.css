@@ -1,0 +1,15 @@
+.match-card {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sound-card {
+  cursor: pointer;
+}
+
+.match-card:hover,
+.sound-card:hover {
+  transform: scale(0.9);
+}
+/*# sourceMappingURL=game3.03453e95.css.map */

@@ -3,6 +3,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 const matchRow = document.querySelector('.match-row');
 const soundCard = document.querySelector('.sound-card');
+const soundImg = document.querySelector('.sound-img');
 const scoreText = document.getElementById('score');
 const xIcon = document.getElementById('x-icon');
 const petunjuk = document.getElementById('petunjuk');
@@ -22,44 +23,54 @@ let currentQuestionIndex = 0;
 
 const words = [
   {
-    arab: 'اَلْأُسْرَةُ',
-    latin: 'keluarga',
+    arab: 'رَأْسٌ',
+    latin: 'kepala',
+    tipe: 'tubuh_arab',
   },
   {
-    arab: 'اَلْأَقْرِبَاءُ',
-    latin: 'kerabat',
+    arab: 'أَنْفٌ',
+    latin: 'hidung',
+    tipe: 'tubuh_arab',
   },
   {
-    arab: 'اَلْأَبَوَيْنِ',
-    latin: 'ortu',
+    arab: 'أُذُنٌ',
+    latin: 'telinga',
+    tipe: 'tubuh_arab',
   },
   {
-    arab: 'أُمٌ',
-    latin: 'ibu',
+    arab: 'عَيْنٌ',
+    latin: 'mata',
+    tipe: 'tubuh_arab',
   },
   {
-    arab: 'اَبٌ',
-    latin: 'bapak',
+    arab: 'فَمٌّ',
+    latin: 'mulut',
+    tipe: 'tubuh_arab',
   },
   {
-    arab: 'جَدٌّ',
-    latin: 'kakek',
+    arab: 'وَاحِدٌ',
+    latin: 'satu',
+    tipe: 'angka_arab',
   },
   {
-    arab: 'جَدَّةٌ',
-    latin: 'nenek',
+    arab: 'اِثْنَانِ',
+    latin: 'dua',
+    tipe: 'angka_arab',
   },
   {
-    arab: 'وَلَدٌ',
-    latin: 'anak_laki-laki',
+    arab: 'ثَلَاثَةٌ',
+    latin: 'tiga',
+    tipe: 'angka_arab',
   },
   {
-    arab: 'بِنْتٌ',
-    latin: 'anak_perempuan',
+    arab: 'أَرْبَعَةٌ',
+    latin: 'empat',
+    tipe: 'angka_arab',
   },
   {
-    arab: 'أَخٌ',
-    latin: 'saudara_laki-laki',
+    arab: 'خَمْسَةٌ',
+    latin: 'lima',
+    tipe: 'angka_arab',
   },
 ];
 
@@ -68,7 +79,7 @@ const shuffled = [...words].sort(() => Math.random() - 0.5);
 const appendArab = () => {
   for (const word of shuffled) {
     matchRow.innerHTML += `
-      <div class="match-card" data-latin="${word.latin}">
+      <div class="match-card" data-latin="${word.tipe}/${word.latin}">
         <div class="card">
           <div class="card-body bg-secondary">
             <p class="font-uthmanic" style="font-size: 2rem;">${word.arab}</p>
@@ -78,12 +89,13 @@ const appendArab = () => {
     `;
   }
 
-  soundCard.dataset['latin'] = shuffled[currentQuestionIndex].latin;
+  soundImg.src = `${shuffled[currentQuestionIndex].latin}.png`;
+  soundCard.dataset['latin'] = `${shuffled[currentQuestionIndex].tipe}/${shuffled[currentQuestionIndex].latin}`;
 };
 
 const handleClickSoundCard = () => {
   soundCard.addEventListener('click', () => {
-    const audio = new Audio(`keluarga_arab/${soundCard.dataset['latin']}.aac`);
+    const audio = new Audio(`${soundCard.dataset['latin']}.aac`);
     audio.play();
   });
 };
@@ -132,7 +144,8 @@ const handleClickArab = () => {
       }
 
       currentQuestionIndex++;
-      soundCard.dataset['latin'] = shuffled[currentQuestionIndex].latin;
+      soundImg.src = `${shuffled[currentQuestionIndex].latin}.png`;
+      soundCard.dataset['latin'] = `${shuffled[currentQuestionIndex].tipe}/${shuffled[currentQuestionIndex].latin}`;
 
       selected = undefined;
     });
@@ -163,7 +176,7 @@ const gameOver = () => {
       imageWidth: 150,
       imageAlt: 'Custom image',
     }).then(() => {
-      localStorage.setItem('game2Score', score);
+      localStorage.setItem('game3Score', score);
       return window.location.assign('score.html');
     });
   }, 1000);

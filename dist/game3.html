@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.917e1949.ico">
 
     <!-- CSS Main File -->
-    <link rel="stylesheet" href="./assets/scss/main.scss" />
-    <link rel="stylesheet" href="./assets/scss/game2.scss" />
+    <link rel="stylesheet" href="/index.4717fcfd.css">
+    <link rel="stylesheet" href="/game3.03453e95.css">
 
     <title>Belajar Bahasa Arab</title>
   </head>
@@ -26,7 +26,7 @@
         <div class="row justify-content-center my-5">
           <div class="col-12 col-lg-6">
             <p class="lead text-center" style="max-width: 800px; font-weight: 500">
-              Pertama, pilih gambar suara untuk mendengarkan bacaan arab, kemudian pilih gambar di bawah sesuai dengan suara yang sudah didengarkan
+              Pertama, pilih gambar soal untuk mendengarkan suara, kemudian pilih gambar di bawah sesuai dengan suara yang sudah didengarkan
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@
           <div class="col-12 d-flex justify-content-center mb-5">
             <div class="card sound-card rounded">
               <div class="card-body bg-secondary">
-                <i class="bi bi-volume-up" style="font-size: 4rem"></i>
+                <img class="sound-img" width="100">
               </div>
             </div>
           </div>
@@ -51,14 +51,8 @@
     <div style="position: fixed; width: max-content; height: max-content; bottom: 90px; left: 100px; z-index: 3">
       <h5>Petunjuk</h5>
     </div>
-    <div
-      id="petunjuk"
-      title="Petunjuk"
-      style="position: fixed; width: max-content; height: max-content; bottom: 25px; left: 25px; cursor: pointer; z-index: 2"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      <img src="./assets/images/petunjuk.gif" alt="petunjuk" width="120" style="border-radius: 50%" />
+    <div id="petunjuk" title="Petunjuk" style="position: fixed; width: max-content; height: max-content; bottom: 25px; left: 25px; cursor: pointer; z-index: 2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <img src="/petunjuk.adc53b44.gif" alt="petunjuk" width="120" style="border-radius: 50%">
     </div>
 
     <!-- Tombol Keluar -->
@@ -75,9 +69,9 @@
           </div>
           <div class="modal-body">
             <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: 600">Petunjuk</h5>
-            <p class="text-center">Permainan Mendengarkan dan menyamakan kata yang sama</p>
+            <p class="text-center">Permainan Mencocokkan gambar dengan kata</p>
             <ul class="list-group">
-              <li class="list-group-item">1. Pilih gambar soal untuk mendengarkan suara bahasa arab</li>
+              <li class="list-group-item">1. Pilih gambar soal untuk mendengarkan suara</li>
               <li class="list-group-item">2. Pilih gambar bahasa arab untuk mencocokkan dengan suara</li>
               <li class="list-group-item">3. Jika gambar dan suara cocok maka akan muncul pesan "Jawaban Kamu Benar"</li>
               <li class="list-group-item">4. Jika gambar dan suara tidak cocok maka akan muncul pesan "Jawaban Kamu Kurang Tepat"</li>
@@ -91,32 +85,32 @@
     </div>
 
     <!-- Musik -->
-    <audio autoplay loop id="music">
-      <source src="./assets/audio/music3.mp3" type="audio/mp3" />
+    <audio autoplay="" loop="" id="music">
+      <source src="/music3.25c296d1.mp3" type="audio/mp3">
     </audio>
 
     <!-- Suara Klik -->
     <audio id="click-sound">
-      <source src="./assets/audio/click.mp3" type="audio/mp3" />
+      <source src="/click.29450c1e.mp3" type="audio/mp3">
     </audio>
 
     <!-- Suara Jika Jawaban Benar -->
     <audio id="success-sound">
-      <source src="./assets/audio/success.mp3" type="audio/mp3" />
+      <source src="/success.684e05f5.mp3" type="audio/mp3">
     </audio>
 
     <!-- Suara Jika Jawaban Kurang Tepat -->
     <audio id="fail-sound">
-      <source src="./assets/audio/fail.mp3" type="audio/mp3" />
+      <source src="/fail.dcf94fc6.mp3" type="audio/mp3">
     </audio>
 
     <!-- Suara Jika Permainan Selesai -->
     <audio id="done-sound">
-      <source src="./assets/audio/done.mp3" type="audio/mp3" />
+      <source src="/done.dc92d80f.mp3" type="audio/mp3">
     </audio>
 
     <!-- JS Mainfile -->
-    <script type="module" src="./assets/js/main.js"></script>
-    <script type="module" src="./assets/js/game2.js"></script>
+    <script src="/index.e5ac7667.js" defer=""></script>
+    <script src="/game3.941c657a.js" defer=""></script>
   </body>
 </html>

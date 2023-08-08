@@ -524,20 +524,19 @@ var _apexcharts = require("apexcharts");
 var _apexchartsDefault = parcelHelpers.interopDefault(_apexcharts);
 const game1ScoreText = document.getElementById('game1-score-text');
 const game2ScoreText = document.getElementById('game2-score-text');
-const memoryScoreText = document.getElementById('memory-score-text');
+const game3ScoreText = document.getElementById('game3-score-text');
 const MAX_SCORE_GAME1 = 100;
 const GAME1_SCORE = window.localStorage.getItem('game1Score') ?? 0;
 const GAME1_SCORE_2 = MAX_SCORE_GAME1 - Number(GAME1_SCORE);
 const MAX_SCORE_GAME2 = 100;
 const GAME2_SCORE = window.localStorage.getItem('game2Score') ?? 0;
 const GAME2_SCORE_2 = MAX_SCORE_GAME2 - Number(GAME2_SCORE);
-const MAX_SCORE_MEMORY = 100;
-// const MEMORY_SCORE = window.localStorage.getItem('memoryScore') ?? 0;
-const MEMORY_SCORE = 0;
-const MEMORY_SCORE_2 = MAX_SCORE_MEMORY - Number(MEMORY_SCORE);
+const MAX_SCORE_GAME3 = 100;
+const GAME3_SCORE = window.localStorage.getItem('game3Score') ?? 0;
+const GAME3_SCORE_2 = MAX_SCORE_GAME3 - Number(GAME3_SCORE);
 game1ScoreText.innerText = `Skor: ${GAME1_SCORE}/${MAX_SCORE_GAME1}`;
 game2ScoreText.innerText = `Skor: ${GAME2_SCORE}/${MAX_SCORE_GAME2}`;
-memoryScoreText.innerText = `Skor: ${MEMORY_SCORE}/${MAX_SCORE_MEMORY}`;
+game3ScoreText.innerText = `Skor: ${GAME3_SCORE}/${MAX_SCORE_GAME3}`;
 let chartOptions = {
     color: '#adb5bd',
     labels: [
@@ -591,19 +590,19 @@ let game2ChartOptions = {
         Number(GAME2_SCORE_2)
     ]
 };
-let memoryChartOptions = {
+let game3ChartOptions = {
     ...chartOptions,
     series: [
-        Number(MEMORY_SCORE),
-        Number(MEMORY_SCORE_2)
+        Number(GAME3_SCORE),
+        Number(GAME3_SCORE_2)
     ]
 };
 let game1Chart = new _apexchartsDefault.default(document.querySelector('#game1-chart'), game1ChartOptions);
 game1Chart.render();
 let game2Chart = new _apexchartsDefault.default(document.querySelector('#game2-chart'), game2ChartOptions);
 game2Chart.render();
-let memoryChart = new _apexchartsDefault.default(document.querySelector('#memory-chart'), memoryChartOptions);
-memoryChart.render();
+let game3Chart = new _apexchartsDefault.default(document.querySelector('#game3-chart'), game3ChartOptions);
+game3Chart.render();
 
 },{"apexcharts":"cty2q","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cty2q":[function(require,module,exports) {
 /*!

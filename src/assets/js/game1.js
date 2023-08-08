@@ -71,8 +71,9 @@ let selectedLatin;
 const MAX_QUESTIONS = 10;
 const CORRECT_BONUS = 10;
 
+const shuffled = [...words].sort(() => Math.random() - 0.5);
+
 const appendArab = () => {
-  const shuffled = [...words].sort(() => Math.random() - 0.5);
   for (const word of shuffled) {
     matchRow.innerHTML += `
     <div class="col-12 d-flex justify-content-between mb-5">
@@ -229,7 +230,7 @@ xIcon.addEventListener('click', () => {
     imageAlt: 'Custom image',
   }).then((result) => {
     if (result.isConfirmed) {
-      return window.location.assign('level.html');
+      return window.location.assign('permainan.html');
     }
   });
 });

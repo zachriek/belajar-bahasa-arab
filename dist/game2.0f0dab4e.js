@@ -580,11 +580,11 @@ const words = [
         latin: 'saudara_laki-laki'
     }, 
 ];
+const shuffled = [
+    ...words
+].sort(()=>Math.random() - 0.5
+);
 const appendArab = ()=>{
-    const shuffled = [
-        ...words
-    ].sort(()=>Math.random() - 0.5
-    );
     for (const word of shuffled)matchRow.innerHTML += `
       <div class="match-card" data-latin="${word.latin}">
         <div class="card">
@@ -637,7 +637,7 @@ const handleClickArab = ()=>{
                 });
             }, 200);
             currentQuestionIndex++;
-            soundCard.dataset['latin'] = words[currentQuestionIndex].latin;
+            soundCard.dataset['latin'] = shuffled[currentQuestionIndex].latin;
             selected = undefined;
         });
     });
@@ -688,7 +688,7 @@ xIcon.addEventListener('click', ()=>{
         imageWidth: 150,
         imageAlt: 'Custom image'
     }).then((result)=>{
-        if (result.isConfirmed) return window.location.assign('level.html');
+        if (result.isConfirmed) return window.location.assign('permainan.html');
     });
 });
 petunjuk.addEventListener('click', ()=>clickSound.play()
