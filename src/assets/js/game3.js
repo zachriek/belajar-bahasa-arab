@@ -25,52 +25,52 @@ const words = [
   {
     arab: 'رَأْسٌ',
     latin: 'kepala',
-    tipe: 'tubuh_arab',
+    tipe: 'tubuh_indo',
   },
   {
     arab: 'أَنْفٌ',
     latin: 'hidung',
-    tipe: 'tubuh_arab',
+    tipe: 'tubuh_indo',
   },
   {
     arab: 'أُذُنٌ',
     latin: 'telinga',
-    tipe: 'tubuh_arab',
+    tipe: 'tubuh_indo',
   },
   {
     arab: 'عَيْنٌ',
     latin: 'mata',
-    tipe: 'tubuh_arab',
+    tipe: 'tubuh_indo',
   },
   {
     arab: 'فَمٌّ',
     latin: 'mulut',
-    tipe: 'tubuh_arab',
+    tipe: 'tubuh_indo',
   },
   {
     arab: 'وَاحِدٌ',
     latin: 'satu',
-    tipe: 'angka_arab',
+    tipe: 'angka_indo',
   },
   {
     arab: 'اِثْنَانِ',
     latin: 'dua',
-    tipe: 'angka_arab',
+    tipe: 'angka_indo',
   },
   {
     arab: 'ثَلَاثَةٌ',
     latin: 'tiga',
-    tipe: 'angka_arab',
+    tipe: 'angka_indo',
   },
   {
     arab: 'أَرْبَعَةٌ',
     latin: 'empat',
-    tipe: 'angka_arab',
+    tipe: 'angka_indo',
   },
   {
     arab: 'خَمْسَةٌ',
     latin: 'lima',
-    tipe: 'angka_arab',
+    tipe: 'angka_indo',
   },
 ];
 

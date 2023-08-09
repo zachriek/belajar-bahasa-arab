@@ -608,13 +608,13 @@ const appendMateri = ()=>{
   `;
 };
 const handleClickMateri = ()=>{
-// const materiCards = document.querySelectorAll('.materi');
-// materiCards.forEach((card) => {
-//   card.addEventListener('click', () => {
-//     const audio = new Audio(`tubuh_arab/${card.dataset['latin']}.aac`);
-//     audio.play();
-//   });
-// });
+    const materiCards = document.querySelectorAll('.materi');
+    materiCards.forEach((card)=>{
+        card.addEventListener('click', ()=>{
+            const audio = new Audio(`angka_arab/${card.dataset['latin']}.aac`);
+            audio.play();
+        });
+    });
 };
 const playGame = ()=>{
     appendMateri();
