@@ -6,6 +6,7 @@
 
 .sound-card {
   cursor: pointer;
+  border: 8px solid var(--bs-primary);
 }
 
 .match-card:hover,

@@ -85,6 +85,8 @@ const handleClickSoundCard = () => {
   soundCard.addEventListener('click', () => {
     const audio = new Audio(`keluarga_arab/${soundCard.dataset['latin']}.aac`);
     audio.play();
+
+    soundCard.classList.add('clicked');
   });
 };
 
@@ -93,6 +95,17 @@ const handleClickArab = () => {
 
   matchCards.forEach((card) => {
     card.addEventListener('click', (e) => {
+      if (!soundCard.classList.contains('clicked')) {
+        return Swal.fire({
+          title: 'Soal belum ditekan!',
+          text: 'Tekan dan dengarkan soal terlebih dahulu!',
+          icon: 'error',
+          imageUrl: 'false.gif',
+          imageWidth: 150,
+          imageAlt: 'Custom image',
+        });
+      }
+
       clickSound.play();
 
       clicked++;
@@ -130,6 +143,8 @@ const handleClickArab = () => {
           });
         }, 200);
       }
+
+      soundCard.classList.remove('clicked');
 
       currentQuestionIndex++;
       soundCard.dataset['latin'] = shuffled[currentQuestionIndex].latin;

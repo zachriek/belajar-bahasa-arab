@@ -612,12 +612,21 @@ const handleClickSoundCard = ()=>{
     soundCard.addEventListener('click', ()=>{
         const audio = new Audio(`${soundCard.dataset['latin']}.aac`);
         audio.play();
+        soundCard.classList.add('clicked');
     });
 };
 const handleClickArab = ()=>{
     const matchCards = document.querySelectorAll('.match-card');
     matchCards.forEach((card)=>{
         card.addEventListener('click', (e)=>{
+            if (!soundCard.classList.contains('clicked')) return _sweetalert2JsDefault.default.fire({
+                title: 'Soal belum ditekan!',
+                text: 'Tekan dan dengarkan soal terlebih dahulu!',
+                icon: 'error',
+                imageUrl: 'false.gif',
+                imageWidth: 150,
+                imageAlt: 'Custom image'
+            });
             clickSound.play();
             clicked++;
             if (clicked === MAX_QUESTIONS) gameOver();
@@ -648,6 +657,7 @@ const handleClickArab = ()=>{
                     imageAlt: 'Custom image'
                 });
             }, 200);
+            soundCard.classList.remove('clicked');
             currentQuestionIndex++;
             soundImg.src = `${shuffled[currentQuestionIndex].latin}.png`;
             soundCard.dataset['latin'] = `${shuffled[currentQuestionIndex].tipe}/${shuffled[currentQuestionIndex].latin}`;
