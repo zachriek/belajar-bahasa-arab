@@ -69,7 +69,7 @@ const words = [
     arab: 'عَشْرَةٌ',
     latin: '‘Asyratun',
     arti: 'Sepuluh',
-    sound: 'Sepuluh',
+    sound: 'sepuluh',
   },
 ];
 
