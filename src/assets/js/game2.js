@@ -97,7 +97,7 @@ const handleClickArab = () => {
     card.addEventListener('click', (e) => {
       if (!soundCard.classList.contains('clicked')) {
         return Swal.fire({
-          title: 'Soal belum ditekan!',
+          title: 'Klik Soal Dulu Sayang <3',
           text: 'Tekan dan dengarkan soal terlebih dahulu!',
           icon: 'error',
           imageUrl: 'false.gif',
@@ -120,8 +120,8 @@ const handleClickArab = () => {
           successSound.volume = 0.5;
 
           Swal.fire({
-            title: 'Benar!',
-            text: 'Jawaban kamu benar!',
+            title: 'Alhamdulillah Benar!',
+            text: 'Horeeee Jawaban kamu benar!',
             icon: 'success',
             imageUrl: 'true.gif',
             imageWidth: 150,
@@ -134,8 +134,8 @@ const handleClickArab = () => {
           failSound.volume = 0.5;
 
           Swal.fire({
-            title: 'Kurang Tepat!',
-            text: 'Jawaban kamu kurang tepat!',
+            title: 'Coba Lagi Sayang <3',
+            text: 'Jangan Menyerah Ayo Coba Lagi!',
             icon: 'error',
             imageUrl: 'false.gif',
             imageWidth: 150,
@@ -170,7 +170,7 @@ const gameOver = () => {
 
     Swal.fire({
       title: 'Selesai!',
-      text: 'Permainan sudah selesai!',
+      text: 'Yeayyy Permainan sudah selesai!',
       icon: 'success',
       timer: 5000,
       timerProgressBar: true,
@@ -196,7 +196,7 @@ startGame();
 xIcon.addEventListener('click', () => {
   clickSound.play();
   Swal.fire({
-    title: 'Keluar?',
+    title: 'Mau Keluar Game?',
     text: 'Kamu yakin ingin keluar dari permainan?',
     reverseButtons: true,
     showCancelButton: true,

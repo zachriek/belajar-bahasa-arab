@@ -1,142 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
 
-    <!-- CSS Main File -->
-    <link rel="stylesheet" href="./assets/scss/main.scss" />
-    <link rel="stylesheet" href="./assets/scss/game2.scss" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
 
-    <title>Belajar Bahasa Arab</title>
-  </head>
-  <body>
-    <section class="mt-5" id="match" style="margin-bottom: 200px">
-      <div class="container">
-        <!-- Teks Skor -->
-        <div class="text-center mt-5 mx-auto" style="width: max-content">
-          <h5>Skor</h5>
-          <h2 id="score">0</h2>
+  <!-- CSS Main File -->
+  <link rel="stylesheet" href="./assets/scss/main.scss" />
+  <link rel="stylesheet" href="./assets/scss/game2.scss" />
+
+  <title>Belajar Bahasa Arab</title>
+</head>
+
+<body>
+  <section class="mt-5" id="match" style="margin-bottom: 200px">
+    <div class="container">
+      <!-- Teks Skor -->
+      <div class="text-center mt-5 mx-auto" style="width: max-content">
+        <h5>Skor</h5>
+        <h2 id="score">0</h2>
+      </div>
+
+      <div class="border border-3 border-secondary p-5 rounded mt-5" style="background: rgba(255, 255, 255, 0.3)">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center">Soal</h2>
+          </div>
         </div>
 
-        <div class="border border-3 border-secondary p-5 rounded mt-5" style="background: rgba(255, 255, 255, 0.3)">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="text-center">Soal</h2>
-            </div>
+        <!-- Teks Petunjuk -->
+        <div class="row justify-content-center mt-2">
+          <div class="col-12 col-lg-6">
+            <p class="text-center" style="max-width: 800px; font-weight: 500">
+              Pertama, pilih gambar suara untuk mendengarkan bacaan arab, kemudian pilih gambar di bawah sesuai dengan
+              suara yang sudah didengarkan
+            </p>
           </div>
+        </div>
 
-          <!-- Teks Petunjuk -->
-          <div class="row justify-content-center mt-2">
-            <div class="col-12 col-lg-6">
-              <p class="text-center" style="max-width: 800px; font-weight: 500">
-                Pertama, pilih gambar suara untuk mendengarkan bacaan arab, kemudian pilih gambar di bawah sesuai dengan suara yang sudah didengarkan
-              </p>
-            </div>
-          </div>
-
-          <!-- Soal -->
-          <div class="row justify-content-center mt-3">
-            <div class="col-12 d-flex justify-content-center">
-              <div class="card sound-card rounded">
-                <div class="card-body bg-secondary">
-                  <i class="bi bi-volume-up" style="font-size: 4rem"></i>
-                </div>
+        <!-- Soal -->
+        <div class="row justify-content-center mt-3">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="card sound-card rounded">
+              <div class="card-body bg-secondary">
+                <i class="bi bi-volume-up" style="font-size: 4rem"></i>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="border border-3 border-secondary p-5 rounded mt-5" style="background: rgba(255, 255, 255, 0.3)">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="text-center">Jawaban</h2>
-            </div>
-          </div>
-
-          <!-- Papan Permainan -->
-          <div class="row justify-content-center mt-5">
-            <div class="col-12 col-lg-6">
-              <div class="match-row d-flex flex-wrap justify-content-center align-items-center gap-5"></div>
-            </div>
+      <div class="border border-3 border-secondary p-5 rounded mt-5" style="background: rgba(255, 255, 255, 0.3)">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center">Jawaban</h2>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Tombol Petunjuk -->
-    <div style="position: fixed; width: max-content; height: max-content; bottom: 90px; left: 100px; z-index: 3">
-      <h5>Petunjuk</h5>
-    </div>
-    <div
-      id="petunjuk"
-      title="Petunjuk"
-      style="position: fixed; width: max-content; height: max-content; bottom: 25px; left: 25px; cursor: pointer; z-index: 2"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      <img src="./assets/images/petunjuk.gif" alt="petunjuk" width="120" style="border-radius: 50%" />
-    </div>
-
-    <!-- Tombol Keluar -->
-    <div id="x-icon" style="position: fixed; width: max-content; height: max-content; bottom: 25px; right: 25px; cursor: pointer; z-index: 2">
-      <i class="bi bi-x-circle-fill" style="font-size: 3rem"></i>
-    </div>
-
-    <!-- Modal Petunjuk -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: 600">Petunjuk</h5>
-            <p class="text-center">Permainan Mendengarkan dan menyamakan kata yang sama</p>
-            <ul class="list-group">
-              <li class="list-group-item">1. Pilih gambar soal untuk mendengarkan suara bahasa arab</li>
-              <li class="list-group-item">2. Pilih gambar bahasa arab untuk mencocokkan dengan suara</li>
-              <li class="list-group-item">3. Jika gambar dan suara cocok maka akan muncul pesan "Jawaban Kamu Benar"</li>
-              <li class="list-group-item">4. Jika gambar dan suara tidak cocok maka akan muncul pesan "Jawaban Kamu Kurang Tepat"</li>
-              <li class="list-group-item">5. Jika soal sudah habis, maka akan muncul pesan "Permainan Selesai"</li>
-              <li class="list-group-item">6. Kemudian, kamu akan diarahkan ke halaman skor untuk melihat hasil skor kamu</li>
-              <li class="list-group-item">7. Selamat Bermain! 😄</li>
-            </ul>
+        <!-- Papan Permainan -->
+        <div class="row justify-content-center mt-5">
+          <div class="col-20 col-lg-20">
+            <div class="match-row d-flex flex-wrap justify-content-center align-items-center gap-5"></div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Musik -->
-    <audio autoplay loop id="music">
-      <source src="./assets/audio/music3.mp3" type="audio/mp3" />
-    </audio>
+  <!-- Tombol Petunjuk -->
+  <div style="position: fixed; width: max-content; height: max-content; bottom: 90px; left: 100px; z-index: 3">
+    <h5>Petunjuk</h5>
+  </div>
+  <div id="petunjuk" title="Petunjuk"
+    style="position: fixed; width: max-content; height: max-content; bottom: 25px; left: 25px; cursor: pointer; z-index: 2"
+    data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <img src="./assets/images/petunjuk.gif" alt="petunjuk" width="120" style="border-radius: 50%" />
+  </div>
 
-    <!-- Suara Klik -->
-    <audio id="click-sound">
-      <source src="./assets/audio/click.mp3" type="audio/mp3" />
-    </audio>
+  <!-- Tombol Keluar -->
+  <div id="x-icon"
+    style="position: fixed; width: max-content; height: max-content; bottom: 25px; right: 25px; cursor: pointer; z-index: 2">
+    <i class="bi bi-x-circle-fill" style="font-size: 3rem"></i>
+  </div>
 
-    <!-- Suara Jika Jawaban Benar -->
-    <audio id="success-sound">
-      <source src="./assets/audio/success.mp3" type="audio/mp3" />
-    </audio>
+  <!-- Modal Petunjuk -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h5 class="modal-title text-center" id="exampleModalLabel" style="font-weight: 600">Petunjuk</h5>
+          <p class="text-center">Permainan Mendengarkan dan menyamakan kata yang sama</p>
+          <ul class="list-group">
+            <li class="list-group-item">1. Pilih gambar soal untuk mendengarkan suara bahasa arab</li>
+            <li class="list-group-item">2. Pilih gambar bahasa arab untuk mencocokkan dengan suara</li>
+            <li class="list-group-item">3. Jika gambar dan suara cocok maka akan muncul pesan "Jawaban Kamu Benar"</li>
+            <li class="list-group-item">4. Jika gambar dan suara tidak cocok maka akan muncul pesan "Jawaban Kamu Kurang
+              Tepat"</li>
+            <li class="list-group-item">5. Jika soal sudah habis, maka akan muncul pesan "Permainan Selesai"</li>
+            <li class="list-group-item">6. Kemudian, kamu akan diarahkan ke halaman skor untuk melihat hasil skor kamu
+            </li>
+            <li class="list-group-item">7. Selamat Bermain! 😄</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Suara Jika Jawaban Kurang Tepat -->
-    <audio id="fail-sound">
-      <source src="./assets/audio/fail.mp3" type="audio/mp3" />
-    </audio>
+  <!-- Musik -->
+  <audio autoplay loop id="music">
+    <source src="./assets/audio/music3.mp3" type="audio/mp3" />
+  </audio>
 
-    <!-- Suara Jika Permainan Selesai -->
-    <audio id="done-sound">
-      <source src="./assets/audio/done.mp3" type="audio/mp3" />
-    </audio>
+  <!-- Suara Klik -->
+  <audio id="click-sound">
+    <source src="./assets/audio/click.mp3" type="audio/mp3" />
+  </audio>
 
-    <!-- JS Mainfile -->
-    <script type="module" src="./assets/js/main.js"></script>
-    <script type="module" src="./assets/js/game2.js"></script>
-  </body>
+  <!-- Suara Jika Jawaban Benar -->
+  <audio id="success-sound">
+    <source src="./assets/audio/success.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Suara Jika Jawaban Kurang Tepat -->
+  <audio id="fail-sound">
+    <source src="./assets/audio/fail.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Suara Jika Permainan Selesai -->
+  <audio id="done-sound">
+    <source src="./assets/audio/done.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- JS Mainfile -->
+  <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/game2.js"></script>
+</body>
+
 </html>

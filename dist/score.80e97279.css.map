@@ -1,1 +1,1 @@
-{"mappings":"AAAA;EACE","sources":["src/assets/scss/score.scss"],"sourcesContent":["section#charts {\r\n  margin-bottom: 100px;\r\n}"],"names":[],"version":3,"file":"score.80e97279.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AAAA","sources":["src/assets/scss/score.scss"],"sourcesContent":["section#charts {\r\n  margin-bottom: 100px;\r\n}"],"names":[],"version":3,"file":"score.80e97279.css.map","sourceRoot":"/__parcel_source_root/"}
